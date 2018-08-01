@@ -101,28 +101,29 @@ else (
 :: Menu
 :menu
 cls
-echo 1) README                          f) Install programs
-echo 2) Windows Update                  g) Update programs
-echo 3) Inf files                       h) Services
-echo 4) SCM OS baselines                i) Media files
-echo 5) Audit Policy                    j) Remove programs + features
-echo 6) Forensics                       k) SCM IE baselines
-echo 7) Add/Delete users                l) Backup
-echo 8) Activate/Disable users          m) Application Settings
-echo 9) Add/Delete admins               n) Hosts file
-echo a) Change passwords                o) Operating system settings
-echo b) Enable Firewall                 p) Defensive Countermeasures
-echo c) Nessus                          q) Prohibited files
-echo d) MMC Stuff                       r) Random list of things at the end
-echo e) Readme Requirements
+echo 1) README                          f) Event Viewer
+echo 2) Windows Update                  g) Sysinternals
+echo 3) Inf files                       h) Install programs
+echo 4) SCM OS baselines                i) Update programs
+echo 5) Audit Policy                    j) Services
+echo 6) Forensics                       k) Media files
+echo 7) Add/Delete users                l) Remove programs + features
+echo 8) Activate/Disable users          m) SCM IE baselines
+echo 9) Add/Delete admins               n) Backup
+echo a) Change passwords                o) Application Settings
+echo b) Enable Firewall                 p) Hosts file
+echo c) Nessus                          q) Operating system settings
+echo d) MMC Stuff                       r) Defensive Countermeasures
+echo e) Readme Requirements             s) Prohibited files
+echo                                    t) Random list of things at the end
 echo.
-echo s) Open DankMMC
-echo t) Jackson's super secret option
-echo u) Open official checklist
-echo v) Open master checklist
+echo u) Open DankMMC
+echo v) Jackson's super secret option
+echo w) Open official checklist
+echo x) Open master checklist
 echo.
 
-choice /c 123456789abcdefghijklmnopqrstuv /n /m "Where would you like to start? "
+choice /c 123456789abcdefghijklmnopqrstuvwx /n /m "Where would you like to start? "
 goto %errorlevel%
 
 :: README

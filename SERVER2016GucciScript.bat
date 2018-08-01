@@ -102,27 +102,28 @@ else (
 :menu
 cls
 echo 1) README                          f) Readme Requirements
-echo 2) Windows Update                  g) Install programs
-echo 3) Server Manager                  h) Update programs
-echo 4) Inf files                       i) Services
-echo 5) SCM OS Baselines                j) Media files
-echo 6) Audit Policy                    k) Remove programs + features
-echo 7) Forensics                       l) SCM IE baselines
-echo 8) Add/Delete users                m) Backup
-echo 9) Activate/Disable users          n) Application Settings
-echo a) Add/Delete admins               o) Hosts file
-echo b) Change passwords                p) Operating system settings
-echo c) Enable Firewall                 q) Defensive Countermeasures
-echo d) Nessus                          r) Prohibited files
-echo e) MMC Stuff                       s) Random list of things at the end
+echo 2) Windows Update                  g) Event Viewer
+echo 3) Server Manager                  h) Install programs
+echo 4) Inf files                       i) Update programs
+echo 5) SCM OS Baselines                j) Services
+echo 6) Audit Policy                    k) Media files
+echo 7) Forensics                       l) Remove programs + features
+echo 8) Add/Delete users                m) SCM IE baselines
+echo 9) Activate/Disable users          n) Backup
+echo a) Add/Delete admins               o) Application Settings
+echo b) Change passwords                p) Hosts file
+echo c) Enable Firewall                 q) Operating system settings
+echo d) Nessus                          r) Defensive Countermeasures
+echo e) MMC Stuff                       s) Prohibited files
+echo                                    t) Random list of things at the end
 echo.
-echo t) Open DankMMC
-echo u) Jackson's super secret option
-echo v) Open official checklist
-echo w) Open master checklist
+echo u) Open DankMMC
+echo v) Jackson's super secret option
+echo w) Open official checklist
+echo x) Open master checklist
 echo.
 
-choice /c 123456789abcdefghijklmnopqrstuvw /n /m "Where would you like to start? "
+choice /c 123456789abcdefghijklmnopqrstuvwx /n /m "Where would you like to start? "
 goto %errorlevel%
 
 :: README
