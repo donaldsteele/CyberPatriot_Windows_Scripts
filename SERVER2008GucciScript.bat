@@ -59,7 +59,6 @@ cls
 choco feature enable -n allowGlobalConfirmation
 
 choco install git
-pause
 
 cd %userprofile%\Desktop
 git init
