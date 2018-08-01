@@ -1,5 +1,3 @@
 Changes that need to be made:
 
-	- change user sections to use one line
-
 	- add enable event viewer to default service change list
