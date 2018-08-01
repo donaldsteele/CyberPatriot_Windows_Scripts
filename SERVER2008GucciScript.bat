@@ -559,8 +559,14 @@ if %automode% == true goto 17
 
 goto menu
 
-:: Install programs
+:: Event Viewer
 :17
+
+:: Sysinternals
+:18
+
+:: Install programs
+:19
 cls
 echo Run the programs when they open up.
 echo.
@@ -581,12 +587,12 @@ start /d "%programfiles%\Microsoft Baseline Security Analyzer 2" mbsa.exe
 start /d "%programfiles%\Microsoft Security Client" msseces.exe
 start /d "%programfiles%\Nmap" zenmap.exe
 
-if %automode% == true goto 18
+if %automode% == true goto 20
 
 goto menu
 
 :: Update programs
-:18
+:20
 if %automode% == true (
 	cls
 	choco upgrade all
@@ -619,12 +625,12 @@ echo.
 
 pause
 
-if %automode% == true goto 19
+if %automode% == true goto 21
 
 goto menu
 
 :: Services
-:19
+:21
 cls
 if %automode% == true (
 	sc stop tlntsvr
@@ -733,7 +739,7 @@ if %choice% == def (
 	sc config EventSystem start= disabled
 	sc stop SysMain
 	sc config SysMain start= disabled
-	goto 19
+	goto 21
 )
 
 :enableserv
@@ -759,7 +765,7 @@ echo SysMain (Superfetch)
 echo.
 
 set /p serv="Enter a service to enable... "
-if %serv% == n goto 19
+if %serv% == n goto 21
 if %serv% == re goto menu
 
 sc config %serv% start= auto
@@ -790,7 +796,7 @@ echo SysMain (Superfetch)
 echo.
 
 set /p serv="Enter a service to disable... "
-if %serv% == n goto 19
+if %serv% == n goto 21
 if %serv% == re goto menu
 
 sc stop %serv%
@@ -805,12 +811,12 @@ echo.
 services.msc
 pause
 
-if %automode% == true goto 20
+if %automode% == true goto 22
 
 goto menu
 
 :: Media Files
-:20
+:22
 
 if %automode% == true goto deletemf
 
@@ -819,7 +825,7 @@ set /p choice="Search for or delete media files? (s/d) "
 if %choice% == s goto searchmf
 if %choice% == d goto deletemf
 if %choice% == n (
-	if %automode% == true goto 21
+	if %automode% == true goto 23
 	goto menu
 )
 if %choice% == re goto menu
@@ -854,9 +860,9 @@ start mediafiles.txt
 
 pause
 
-if %automode% == true goto 21
+if %automode% == true goto 23
 
-goto 20
+goto 22
 
 :searchmf
 cls
@@ -874,12 +880,12 @@ start mediafiles.txt
 
 pause
 
-if %automode% == true goto 21
+if %automode% == true goto 23
 
-goto 20
+goto 22
 
 :: Remove Programs + Features
-:21
+:23
 cls
 echo MAKE SURE YOU DO ALL OF THE TINGS. DO IT GOOD.
 echo.
@@ -899,33 +905,33 @@ start sketchyfiles.txt
 
 pause
 
-if %automode% == true goto 22
+if %automode% == true goto 24
 
 goto menu
 
 :: SCM IE Baselines
-:22
+:24
 cls
 "%USERPROFILE%\Desktop\Server2008CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Server2008CompFiles\SCMBaselines\IE9_Com_Sec"
 "%USERPROFILE%\Desktop\Server2008CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Server2008CompFiles\SCMBaselines\IE9_User_Sec"
 
-if %automode% == true goto 23
+if %automode% == true goto 25
 
 goto menu
 
 :: Backup
-:23
+:25
 cls
 set /p location="Enter the drive letter for the backup location... "
 
 wbadmin enable backup -addtarget:%location%: -include:C: -schedule:03:00 -quiet
 
-if %automode% == true goto 24
+if %automode% == true goto 26
 
 goto menu
 
 :: Application Settings
-:24
+:26
 cls
 echo IF YOU'RE ON A SERVER OS, focus on this a little more.
 echo.
@@ -944,24 +950,24 @@ start firefox.exe
 
 pause
 
-if %automode% == true goto 25
+if %automode% == true goto 27
 
 goto menu
 
 :: Hosts file
-:25
+:27
 cls
 takeown /f "%systemroot%\system32\drivers\etc"
 
 del "%systemroot%\system32\drivers\etc\hosts"
 copy "%userprofile%\Desktop\Server2008CompFiles\hosts" "%systemroot%\system32\drivers\etc\hosts"
 
-if %automode% == true goto 26
+if %automode% == true goto 28
 
 goto menu
 
 :: Operating System Settings
-:26
+:28
 cls
 echo IF YOU'RE ON A SERVER OS, focus on this a little more.
 echo.
@@ -991,12 +997,12 @@ echo Enable UAC
 echo.
 pause
 
-if %automode% == true goto 27
+if %automode% == true goto 29
 
 goto menu
 
 :: Defensive Countermeasures
-:27
+:29
 cls
 echo Make sure windows defender is danko enabled
 echo.
@@ -1012,12 +1018,12 @@ echo Scan on all those programs
 echo.
 pause
 
-if %automode% == true goto 28
+if %automode% == true goto 30
 
 goto menu
 
 :: Prohibited files
-:28
+:30
 cls
 echo Yaboi prohibited files.
 echo.
@@ -1032,12 +1038,12 @@ start eek.txt
 
 pause
 
-if %automode% == true goto 29
+if %automode% == true goto 31
 
 goto menu
 
 :: Random Things At The End
-:29
+:31
 cls
 echo Check processes for sketchiness.
 echo.
@@ -1087,21 +1093,21 @@ pause
 goto menu
 
 :: Open DankMMC
-:30
+:32
 start /d "%userprofile%\Desktop\Server2008CompFiles" DankMMC.msc
 goto menu
 
 :: Change visual effects for performance
-:31
+:33
 sysdm.cpl
 goto menu
 
 :: Open official checklist
-:32
+:34
 start /d "%userprofile%\Desktop\Server2008CompFiles" OfficialServer2008Checklist.docx
 goto menu
 
 :: Open master checklist
-:33
+:35
 start /d "%userprofile%\Desktop" OurGloriousChecklist2018_Windows.txt
 goto menu
