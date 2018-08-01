@@ -1,11 +1,5 @@
 Changes that need to be made:
 
-	- add sysinternals section midway through
-
 	- change user sections to use one line
 
 	- add enable event viewer to default service change list
-
-	- add event viewer section
-
-	- update checklist to reflect new sections
