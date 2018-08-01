@@ -47,10 +47,10 @@ icacls "%systemroot%\System32\cmd.exe" /grant %username%:f
 ren "%systemroot%\System32\sethc.exe" "%systemroot%\System32\sethc1.exe"
 copy "%systemroot%\System32\cmd.exe" "%systemroot%\System32\sethc.exe"
 
-:: Ask to skip to menu or auto choice
+:: Ask if first time setup
 cls
-set /p cont="Would you like to skip ahead to the menu/automode choice? (y/n) "
-if %cont% == y goto autochoice
+set /p cont="Is this first time setup? (y/n) "
+if %cont% == n goto autochoice
 
 :: Install git and pull from master
 cls
