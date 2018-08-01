@@ -671,6 +671,8 @@ if %automode% == true (
 	sc config EventSystem start= disabled
 	sc stop SysMain
 	sc config SysMain start= disabled
+	sc config EventLog start= auto
+	sc start EventLog
 	goto manualserv
 )
 
@@ -692,6 +694,7 @@ echo RpcSs (Remote Procedure Call)
 echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo SysMain (Superfetch)
+echo EventLog (Event Log duh)
 echo.
 
 set /p choice="Enable or Disable Service? (e/d/def) "
@@ -739,6 +742,8 @@ if %choice% == def (
 	sc config EventSystem start= disabled
 	sc stop SysMain
 	sc config SysMain start= disabled
+	sc config EventLog start= auto
+	sc start EventLog
 	goto 21
 )
 
@@ -762,6 +767,7 @@ echo RpcSs (Remote Procedure Call)
 echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo SysMain (Superfetch)
+echo EventLog (Event Log duh)
 echo.
 
 set /p serv="Enter a service to enable... "
@@ -793,6 +799,7 @@ echo RpcSs (Remote Procedure Call)
 echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo SysMain (Superfetch)
+echo EventLog (Event Log duh)
 echo.
 
 set /p serv="Enter a service to disable... "

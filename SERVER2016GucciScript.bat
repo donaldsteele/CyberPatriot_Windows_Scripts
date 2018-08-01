@@ -646,6 +646,8 @@ if %automode% == true (
 	sc config xbgm start= disabled
 	sc stop SysMain
 	sc config SysMain start= disabled
+	sc config EventLog start= auto
+	sc start EventLog
 	goto manualserv
 )
 
@@ -668,6 +670,7 @@ echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo XblAuthManager, XblGameSave, XboxGipSvc, xboxgip, xbgm (Xbox services)
 echo SysMain (Superfetch)
+echo EventLog (Event Log duh)
 echo.
 
 set /p choice="Enable or Disable Service? (e/d/def) "
@@ -725,6 +728,8 @@ if %choice% == def (
 	sc config xbgm start= disabled
 	sc stop SysMain
 	sc config SysMain start= disabled
+	sc config EventLog start= auto
+	sc start EventLog
 	goto 20
 )
 
@@ -749,6 +754,7 @@ echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo XblAuthManager, XblGameSave, XboxGipSvc, xboxgip, xbgm (Xbox services)
 echo SysMain (Superfetch)
+echo EventLog (Event Log duh)
 echo.
 
 set /p serv="Enter a service to enable... "
@@ -781,6 +787,7 @@ echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo XblAuthManager, XblGameSave, XboxGipSvc, xboxgip, xbgm (Xbox services)
 echo SysMain (Superfetch)
+echo EventLog (Event Log duh)
 echo.
 
 set /p serv="Enter a service to disable... "
