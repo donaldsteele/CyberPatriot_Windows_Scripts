@@ -103,7 +103,7 @@ else (
 cls
 echo 1) README                          g) Readme Requirements
 echo 2) Windows Update + Service Pack   h) Event Viewer
-echo 3) Server Manager                  i) Sysinternals
+echo 3) Server Manager                  i) Sysinternals + Tasks
 echo 4) Inf files                       j) Install programs
 echo 5) SCM OS Baselines                k) Update programs
 echo 6) DISA Stig                       l) Services
@@ -124,7 +124,7 @@ echo y) Open official checklist
 echo z) Open master checklist
 echo.
 
-choice /c 123456789abcdefghijklmnopqrstuvxy /n /m "Where would you like to start? "
+choice /c 123456789abcdefghijklmnopqrstuvxyz /n /m "Where would you like to start? "
 goto %errorlevel%
 
 :: README
@@ -562,7 +562,7 @@ goto menu
 :: Event Viewer
 :17
 
-:: Sysinternals
+:: Sysinternals + Tasks
 :18
 
 :: Install programs

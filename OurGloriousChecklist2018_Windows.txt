@@ -53,58 +53,68 @@ WIP
 
 23.) Do specific README Requirements
 
-24.) Install security programs (antivirus mostly)
+24.) Event Viewer gotta find the tings
 
-25.) Run/Scan security programs
+25.) Run Netstat and search for suspicioso
 
-26.) Update all programs
+26.) Process explorer to find sketchy processes
 
-27.) Disable Services
+27.) Autoruns to figure out dumb scheduled tasks
 
-28.) Find/Remove media files
+28.) Scheduled Tasks just to make sure nothin fishy goin on
 
-29.) Uninstall programs + features
+29.) Install security programs (antivirus mostly)
 
-30.) Find and remove malware
+30.) Run/Scan security programs
 
-31.) SCM internet explorer baselines
+31.) Update all programs
 
-32.) Set up Backup
+32.) Disable Services
 
-33.) Firefox security settings
+33.) Find/Remove media files
 
-34.) Other application settings
+34.) Uninstall programs + features
 
-35.) Check hosts file for sketchy
+35.) Find and remove malware
 
-36.) Enable screen saver "logon on resume"
+36.) SCM internet explorer baselines
 
-37.) Check permissions for folders
+37.) Set up Backup
 
-38.) Disable remote desktop (unless readme)
+38.) Firefox security settings
 
-39.) Action center
+39.) Other application settings
 
-40.) Enable UAC and set to highest setting
+40.) Check hosts file for sketchy
 
-41.) IF WIN10: Run CAT-Lite scanner
+41.) Enable screen saver "logon on resume"
 
-42.) Make sure windows defender is enabled
+42.) Check permissions for folders
 
-43.) Run all security programs again
+43.) Disable remote desktop (unless readme)
 
-44.) Check for prohibited/sketchy files
+44.) Action center
 
-45.) Use processlibrary.com to check sketchy processes
+45.) Enable UAC and set to highest setting
 
-46.) Try vulnerabilities from the other images
+46.) IF WIN10: Run CAT-Lite scanner
 
-47.) Read past comp vulnerabilities (IMPORTANT)
+47.) Make sure windows defender is enabled
 
-48.) Go through everything again to not miss stuff
+48.) Run all security programs again
 
-49.) Triple check i guess
+49.) Check for prohibited/sketchy files
 
-50.) Use Dr. Kowal's basic checklist
+50.) Use processlibrary.com to check sketchy processes
 
-51.) Despacito
+51.) Try vulnerabilities from the other images
+
+52.) Read past comp vulnerabilities (IMPORTANT)
+
+53.) Go through everything again to not miss stuff
+
+54.) Triple check i guess
+
+55.) Use Dr. Kowal's basic checklist
+
+56.) Despacito

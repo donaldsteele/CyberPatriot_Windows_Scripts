@@ -102,7 +102,7 @@ else (
 :menu
 cls
 echo 1) README                          f) Event Viewer
-echo 2) Windows Update                  g) Sysinternals
+echo 2) Windows Update                  g) Sysinternals + Tasks
 echo 3) Inf files                       h) Install programs
 echo 4) SCM OS baselines                i) Update programs
 echo 5) Audit Policy                    j) Services
@@ -510,7 +510,7 @@ goto menu
 :: Event Viewer
 :15
 
-:: Sysinternals
+:: Sysinternals + Tasks
 :16
 
 :: Install programs
