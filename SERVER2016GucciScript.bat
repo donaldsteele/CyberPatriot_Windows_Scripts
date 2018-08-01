@@ -72,14 +72,7 @@ cls
 echo Note: Auto mode will still take you to menu, you just choose where to start.
 echo.
 set /p autochoice="Menu or auto mode? (m/a) "
-if %autochoice% == secret (
-	cls
-	echo Ooh. Super secret special ting.
-	echo.
-	sysdm.cpl
-	pause
-	goto autochoice
-)
+
 if %autochoice% == a (
 	set automode=true
 	goto menu
@@ -117,12 +110,11 @@ echo e) MMC Stuff                       t) Prohibited files
 echo f) Readme Requirements             u) Random list of things at the end
 echo.
 echo v) Open DankMMC
-echo w) Jackson's super secret option
-echo x) Open official checklist
-echo y) Open master checklist
+echo w) Open official checklist
+echo x) Open master checklist
 echo.
 
-choice /c 123456789abcdefghijklmnopqrstuvwxy /n /m "Where would you like to start? "
+choice /c 123456789abcdefghijklmnopqrstuvwx /n /m "Where would you like to start? "
 goto %errorlevel%
 
 :: README
@@ -1092,17 +1084,12 @@ goto menu
 start /d "%userprofile%\Desktop\Server2016CompFiles" DankMMC.msc
 goto menu
 
-:: Change visual effects for performance
-:32
-sysdm.cpl
-goto menu
-
 :: Open official checklist
-:33
+:32
 start /d "%userprofile%\Desktop\Server2016CompFiles" OfficialServer2016Checklist.docx
 goto menu
 
 :: Open master checklist
-:34
+:33
 start /d "%userprofile%\Desktop" OurGloriousChecklist2018_Windows.txt
 goto menu
