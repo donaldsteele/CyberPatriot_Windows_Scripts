@@ -572,7 +572,7 @@ cls
 echo Running netstat and outputting to text file...
 echo.
 netstat -ab > netstat.txt
-netstat.txt
+start netstat.txt
 pause
 
 cls
