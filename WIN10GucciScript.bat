@@ -557,7 +557,6 @@ pause
 start /d "%programfiles%\Malwarebytes\Anti-Malware" mbam.exe
 start /d "%programfiles%\Microsoft Baseline Security Analyzer 2" mbsa.exe
 start /d "%programfiles%\Microsoft Security Client" msseces.exe
-start /d "%programfiles%\Nmap" zenmap.exe
 
 if %automode% == true goto 18
 
