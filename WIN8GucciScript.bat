@@ -517,9 +517,46 @@ goto menu
 
 :: Event Viewer
 :16
+cls
+echo Look at the Event Viewer for stuff that's BAD
+echo.
+eventvwr.msc
+pause
+
+if %automode% == true goto 17
+
+goto menu
 
 :: Sysinternals + Netstat
 :17
+cls Installing Sysinternals...
+echo.
+choco install sysinternals
+
+cls
+echo Running netstat and outputting to text file...
+echo.
+netstat -ab > netstat.txt
+netstat.txt
+pause
+
+cls
+echo Opening process explorer cause cool...
+echo.
+echo Don't forget to check virustotal and verify certificates.
+echo.
+procexp
+pause
+
+cls
+echo Opening autoruns...
+echo.
+autoruns
+pause
+
+if %automode% == true goto 18
+
+goto menu
 
 :: Install programs
 :18
@@ -531,7 +568,7 @@ echo.
 choco feature enable -n useFipsCompliantChecksums
 
 cls
-choco install firefox ie11 malwarebytes mbsa microsoftsecurityessentials nmap --ignorechecksum --force
+choco install firefox ie11 malwarebytes mbsa microsoftsecurityessentials --ignorechecksum --force
 pause
 
 start /d "%programfiles%\Malwarebytes\Anti-Malware" mbam.exe
