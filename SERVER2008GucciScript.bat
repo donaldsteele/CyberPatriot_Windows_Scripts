@@ -607,7 +607,7 @@ choco feature enable -n allowGlobalConfirmation
 choco feature enable -n useFipsCompliantChecksums
 
 cls
-choco install firefox ie9 malwarebytes mbsa microsoftsecurityessentials nmap --ignorechecksum --force
+choco install firefox ie9 malwarebytes mbsa microsoftsecurityessentials --ignorechecksum --force
 pause
 
 start /d "%programfiles%\Malwarebytes\Anti-Malware" mbam.exe
