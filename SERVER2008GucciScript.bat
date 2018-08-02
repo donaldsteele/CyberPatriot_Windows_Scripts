@@ -79,7 +79,7 @@ if %autochoice% == a (
 )
 if %autochoice% == m (
 	set automode=false
-	start /d "%userprofile%\Desktop\Win7CompFiles" DankMMC.msc
+	start /d "%userprofile%\Desktop\Server2008CompFiles" DankMMC.msc
 	goto menu
 )
 else (
