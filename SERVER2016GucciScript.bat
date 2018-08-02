@@ -244,7 +244,7 @@ echo Import the two audit templates (AllAudit then NoAudit)
 echo.
 echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 echo.
-gpedit.msc
+start gpedit.msc
 
 pause
 
@@ -479,13 +479,13 @@ goto sharestart
 cls
 echo Check locked users/other user stuff
 echo.
-if %automode% == true compmgmt.msc
+if %automode% == true start compmgmt.msc
 pause
 
 cls
 echo Enable Windows Defender
 echo.
-if %automode% == true gpedit.msc
+if %automode% == true start gpedit.msc
 pause
 
 cls
@@ -520,7 +520,7 @@ goto menu
 cls
 echo Look at the Event Viewer for stuff that's BAD
 echo.
-eventvwr.msc
+start eventvwr.msc
 pause
 
 if %automode% == true goto 17
@@ -827,7 +827,7 @@ goto disablegud
 cls
 echo Now look for sketchy services to disable and stuff
 echo.
-services.msc
+start services.msc
 pause
 
 if %automode% == true goto 21
@@ -917,7 +917,7 @@ echo.
 echo Remove .zip, .exe, .msi
 echo.
 
-appwiz.cpl
+start appwiz.cpl
 cd %homedrive%\
 dir /s /a /b /o-d *.zip *.exe *.msi >> sketchyfiles.txt
 start sketchyfiles.txt
@@ -1003,12 +1003,12 @@ pause
 cls
 echo Disable remote desktop
 echo.
-sysdm.cpl
+start sysdm.cpl
 pause
 
 cls
 echo Check action center (doesn't apply to Server 2008)
-wscui.cpl
+start wscui.cpl
 echo.
 pause
 
