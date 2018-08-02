@@ -52,6 +52,16 @@ cls
 set /p cont="Is this first time setup? (y/n) "
 if %cont% == n goto autochoice
 
+:: Make CMD shortcut
+cls
+echo Make a CMD shortcut on your taskbar (if you want) by:
+echo.
+echo Right clicking on command prompt, setting it to run as admin
+echo.
+cd "%appdata%\Microsoft\Windows\Start Menu\Programs\System Tools"
+explorer .
+pause
+
 :: Install git and pull from master
 cls
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
