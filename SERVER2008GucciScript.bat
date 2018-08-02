@@ -559,18 +559,14 @@ goto menu
 :: Install programs
 :19
 cls
-echo Run the programs when they open up.
-echo.
-echo Don't forget to press any key to continue occasionally.
+echo The programs should open automatically after they all install,
+echo but if not run the programs n stuff.
 echo.
 
-"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-pause
-choco feature enable -n allowGlobalConfirmation
 choco feature enable -n useFipsCompliantChecksums
 
 cls
-choco install firefox ie9 malwarebytes mbsa microsoftsecurityessentials nmap --ignorechecksum --force
+choco install firefox ie11 malwarebytes mbsa microsoftsecurityessentials nmap --ignorechecksum --force
 pause
 
 start /d "%programfiles%\Malwarebytes\Anti-Malware" mbam.exe
