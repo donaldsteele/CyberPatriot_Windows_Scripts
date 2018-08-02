@@ -94,7 +94,7 @@ else (
 :menu
 cls
 echo 1) README                          g) Event Viewer
-echo 2) Windows Update + Service Pack   h) Sysinternals + Tasks
+echo 2) Windows Update + Service Pack   h) Sysinternals + Netstat
 echo 3) Inf files                       i) Install programs
 echo 4) SCM OS baselines                j) Update programs
 echo 5) DISA Stig                       k) Services
@@ -526,7 +526,7 @@ goto menu
 :: Event Viewer
 :16
 
-:: Sysinternals + Tasks
+:: Sysinternals + Netstat
 :17
 
 :: Install programs
