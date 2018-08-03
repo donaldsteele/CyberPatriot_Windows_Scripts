@@ -1,5 +1,3 @@
 Changes that need to be made:
 
-	- Finish Event Log section
-
-	- Finish Sysinternals section
+	- Implement icacls somehow
