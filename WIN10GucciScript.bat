@@ -325,7 +325,7 @@ if %automode% == true (
 	net user BroShirt /active:no
 	net user BroPants /active:no
 	for /f "skip=4 eol=;" %%a in (%userprofile%\Desktop\Win10CompFiles\users.txt) do net user %%a /active:yes
-	goto 10
+	goto 9
 )
 
 net user BroPants /active:no
