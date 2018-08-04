@@ -105,7 +105,7 @@ else (
 cls
 echo 1) README                          g) Readme Requirements
 echo 2) Windows Update + Service Pack   h) Event Viewer
-echo 3) Server Manager                  i) Sysinternals + Netstat
+echo 3) Server Manager                  i) Sysinternals
 echo 4) Inf files                       j) Install programs
 echo 5) SCM OS Baselines                k) Update programs
 echo 6) DISA Stig                       l) Services
@@ -566,31 +566,20 @@ if %automode% == true goto 18
 
 goto menu
 
-:: Sysinternals + Netstat
+:: Sysinternals
 :18
 cls Installing Sysinternals...
 echo.
 choco install sysinternals
 
 cls
-echo Running netstat and outputting to text file...
+echo Opening TCPView, Process Explorer, and Autoruns...
 echo.
-netstat -ab > netstat.txt
-start netstat.txt
-pause
-
-cls
-echo Opening process explorer cause cool...
-echo.
-echo Don't forget to check virustotal and verify certificates.
+echo Make sure to delete the file itself, not just the process
 echo.
 procexp
-pause
-
-cls
-echo Opening autoruns...
-echo.
 autoruns
+tcpview
 pause
 
 if %automode% == true goto 19
