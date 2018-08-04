@@ -165,8 +165,6 @@ goto menu
 :: Inf files
 :3
 
-if %automode% == true goto enabledinf
-
 cls
 set /p inf="Enabled or Disabled Inf? (e/d) "
 if %inf% == e goto enabledinf
@@ -189,8 +187,6 @@ echo.
 
 pause
 
-if %automode% == true goto disabledinf
-
 goto 3
 
 :disabledinf
@@ -204,8 +200,6 @@ echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 echo.
 
 pause
-
-if %automode% == true goto 4
 
 goto 3
 
