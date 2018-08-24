@@ -206,6 +206,10 @@ goto 3
 :: SCM OS Baselines
 :4
 cls
+set /p ver="Enter the version of windows this is... "
+echo.
+winver
+pause
 
 "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10\Computer_Sec"
 "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10\Domain_Sec"
