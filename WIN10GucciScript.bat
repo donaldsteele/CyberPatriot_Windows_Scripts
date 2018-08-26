@@ -211,11 +211,78 @@ echo.
 winver
 pause
 
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10\Computer_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10\Domain_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10\User_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10\BitLocker_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10\Credential_Guard_Sec"
+if %ver% == 1507 (
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1507\Computer_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1507\Computer_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1507\Domain_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1507\User_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1507\User_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1507\BitLocker_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1507\CredGuard_Sec"
+)
+
+if %ver% == 1511 (
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1511\Computer_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1511\Computer_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1511\Domain_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1511\User_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1511\User_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1511\BitLocker_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1511\CredGuard_Sec"
+)
+
+if %ver% == 1607 (
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_3"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\BitLocker_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\CredGuard_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Defender_Sec"
+)
+
+if %ver% == 1703 (
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1703\Computer_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1703\Computer_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1703\Domain_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1703\User_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1703\User_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1703\BitLocker_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1703\CredGuard_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1703\Defender_Sec"
+)
+
+if %ver% == 1709 (
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1709\Computer_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1709\Computer_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1709\Domain_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1709\User_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1709\User_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1709\BitLocker_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1709\CredGuard_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1709\Defender_Sec"
+)
+
+if %ver% == 1803 (
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1803\Computer_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1803\Computer_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1803\Domain_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1803\User_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1803\User_Sec_2"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1803\BitLocker_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1803\CredGuard_Sec"
+	"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1803\Defender_Sec"
+)
+
+else (
+	cls
+	echo Oof try again.
+	echo.
+	pause
+	goto 4
+)
+
 cls
 echo SCM Baselines Done!
 echo.

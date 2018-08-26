@@ -226,9 +226,18 @@ goto 4
 :5
 cls
 
-"%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\Server2016\MS_Sec"
-"%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\Server2016\Dom_Sec"
-"%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\Server2016\DC_Sec"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_2"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_3"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec_2"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Member_Sec"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec_2"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\BitLocker_Sec"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\CredGuard_Sec"
+"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Defender_Sec"
+
 cls
 echo SCM Baselines Done!
 echo.
