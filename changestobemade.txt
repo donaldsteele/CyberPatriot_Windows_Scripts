@@ -1,5 +1,6 @@
 Changes that need to be made:
 
+	Note: May need to remove pauses for new script if too gay
 	- Change inf's back to recommended and opposite lol yeet
 	- Implement icacls somehow
 	- Think of ways to automate things like out here in cali
