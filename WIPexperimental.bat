@@ -5,6 +5,14 @@ set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Win7CompFiles
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
 
+:: Diffchecker open
+cls
+echo Go to diffchecker.com
+echo.
+echo You'll use it later big hoss
+echo.
+pause
+
 :: Install git and download folders
 cls
 echo Installing git and downloading folders...
