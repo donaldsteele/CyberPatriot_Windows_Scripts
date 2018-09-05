@@ -72,6 +72,8 @@ git checkout origin/master Server2016CompFiles OurGloriousChecklist2018_Windows.
 :: Ask if menu or automode
 :autochoice
 cls
+echo Menu is for quick stuff ya need to do, Auto mode is main option
+echo.
 echo Note: Auto mode will still take you to menu, you just choose where to start.
 echo.
 set /p autochoice="Menu or auto mode? (m/a) "
