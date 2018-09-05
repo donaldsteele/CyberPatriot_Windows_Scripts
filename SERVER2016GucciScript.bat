@@ -19,6 +19,9 @@ pause
 :: Setup
 set automode=false
 mode con: cols=100 lines=22
+set desktop=%desktop%
+set compfiles=%compfiles%
+set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 :: Motivational Speech
 cls
@@ -34,7 +37,7 @@ echo   (Assume they did nothing)
 echo.
 echo - Read the notes in the CMD window so you don't forget crucial stuff.
 echo.
-echo - Don't be Vraj.
+echo - Don't be Vraj or Jack or Timon.
 echo.
 
 pause
@@ -52,25 +55,15 @@ cls
 set /p cont="Is this first time setup? (y/n) "
 if %cont% == n goto autochoice
 
-:: Make CMD shortcut
-cls
-echo Make a CMD shortcut on your taskbar (if you want) by:
-echo.
-echo Right clicking on command prompt, setting it to run as admin
-echo.
-cd "%appdata%\Microsoft\Windows\Start Menu\Programs\System Tools"
-explorer .
-pause
-
 :: Install git and pull from master
 cls
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+%pshellrun% "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 choco feature enable -n allowGlobalConfirmation
 
 choco install git
 
-cd %userprofile%\Desktop
+cd %desktop%
 git init
 git remote add origin https://github.com/Marduk28/CyberPatriot_Windows_Scripts.git
 git fetch origin master
@@ -89,7 +82,7 @@ if %autochoice% == a (
 )
 if %autochoice% == m (
 	set automode=false
-	start /d "%userprofile%\Desktop\Server2016CompFiles" DankMMC.msc
+	start /d "%compfiles%" DankMMC.msc
 	goto menu
 )
 else (
@@ -196,7 +189,7 @@ if %inf% == n (
 
 :enabledinf
 cls
-secedit /configure /db "%systemroot%\dankdatabase1.db" /cfg "%USERPROFILE%\Desktop\Server2016CompFiles\Server2016EnabledInf.inf"
+secedit /configure /db "%systemroot%\dankdatabase1.db" /cfg "%compfiles%\Server2016EnabledInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
 echo Enabled INF Done!
@@ -210,7 +203,7 @@ goto 4
 
 :disabledinf
 cls
-secedit /configure /db "%systemroot%\dankdatabase2.db" /cfg "%USERPROFILE%\Desktop\Server2016CompFiles\Server2016DisabledInf.inf"
+secedit /configure /db "%systemroot%\dankdatabase2.db" /cfg "%compfiles%\Server2016DisabledInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
 echo Disabled Inf Done!
@@ -226,17 +219,17 @@ goto 4
 :5
 cls
 
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_2"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_3"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec_2"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Member_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec_2"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\BitLocker_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\CredGuard_Sec"
-"%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Defender_Sec"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_2"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_3"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec_2"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Member_Sec"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec_2"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\BitLocker_Sec"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\CredGuard_Sec"
+"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Defender_Sec"
 
 cls
 echo SCM Baselines Done!
@@ -296,7 +289,7 @@ echo.
 
 net user
 
-start /d "%userprofile%\Desktop\Server2016CompFiles" users.txt
+start /d "%compfiles%" users.txt
 
 pause
 
@@ -344,7 +337,7 @@ if %automode% == true (
 	cls
 	net user BroShirt /active:no
 	net user BroPants /active:no
-	for /f "skip=4 eol=;" %%a in (%userprofile%\Desktop\Server2016CompFiles\users.txt) do net user %%a /active:yes
+	for /f "skip=4 eol=;" %%a in (%compfiles%\users.txt) do net user %%a /active:yes
 	goto 10
 )
 
@@ -429,7 +422,7 @@ goto deladmins
 :11
 if %automode% == true (
 	cls
-	for /f "skip=2 eol=;" %%a in (%userprofile%\Desktop\Server2016CompFiles\users.txt) do net user %%a abc123ABC123@@
+	for /f "skip=2 eol=;" %%a in (%compfiles%\users.txt) do net user %%a abc123ABC123@@
 	goto 12
 )
 
@@ -452,7 +445,7 @@ goto 11
 :: Enable firewall + template
 :12
 cls
-netsh advfirewall import "%USERPROFILE%\Desktop\Server2016CompFiles\Server2016Firewall.wfw"
+netsh advfirewall import "%compfiles%\Server2016Firewall.wfw"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 netsh advfirewall set allprofiles state on
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
@@ -932,8 +925,8 @@ goto menu
 :: SCM IE Baselines
 :23
 cls
-"%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\IE11_Com_Sec"
-"%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\LGPO.exe" /g "%USERPROFILE%\Desktop\Server2016CompFiles\SCMBaselines\IE11_User_Sec"
+"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\IE11_Com_Sec"
+"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\IE11_User_Sec"
 
 if %automode% == true goto 24
 
@@ -980,7 +973,7 @@ cls
 takeown /f "%systemroot%\system32\drivers\etc"
 
 del "%systemroot%\system32\drivers\etc\hosts"
-copy "%userprofile%\Desktop\Server2016CompFiles\hosts" "%systemroot%\system32\drivers\etc\hosts"
+copy "%compfiles%\hosts" "%systemroot%\system32\drivers\etc\hosts"
 
 if %automode% == true goto 27
 
@@ -1095,7 +1088,7 @@ pause
 cls
 echo Official checklist
 echo.
-start /d "%userprofile%\Desktop\Win7CompFiles" OfficialWin7Checklist.pdf
+start /d "%desktop%\Win7CompFiles" OfficialWin7Checklist.pdf
 pause
 
 if %automode% == true goto end
@@ -1115,15 +1108,15 @@ goto menu
 
 :: Open DankMMC
 :31
-start /d "%userprofile%\Desktop\Server2016CompFiles" DankMMC.msc
+start /d "%compfiles%" DankMMC.msc
 goto menu
 
 :: Open official checklist
 :32
-start /d "%userprofile%\Desktop\Server2016CompFiles" OfficialServer2016Checklist.docx
+start /d "%compfiles%" OfficialServer2016Checklist.docx
 goto menu
 
 :: Open master checklist
 :33
-start /d "%userprofile%\Desktop" OurGloriousChecklist2018_Windows.txt
+start /d "%desktop%" OurGloriousChecklist2018_Windows.txt
 goto menu
