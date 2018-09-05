@@ -447,6 +447,11 @@ netsh advfirewall import "%compfiles%\Win7Firewall.wfw"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 netsh advfirewall set allprofiles state on
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
+cls
+echo Check firewall exceptions for sketchiness...
+echo.
+firewall.cpl
+pause
 
 if %automode% == true goto 13
 
