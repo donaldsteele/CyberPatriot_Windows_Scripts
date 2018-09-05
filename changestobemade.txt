@@ -3,5 +3,6 @@ Changes that need to be made:
 	Note: May need to remove pauses for new script if too gay
 	- Change inf's back to recommended and opposite lol yeet
 	- Implement icacls somehow
-	- Think of ways to automate things like out here in cali
-		- do a bunch of things at beginning and then restart image for manual stuff?
+	
+	- COOL THING: malware that have service display names as legit services
+	              figure out how to automate checking maybe or just check anyway
