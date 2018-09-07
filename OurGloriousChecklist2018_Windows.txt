@@ -5,7 +5,7 @@ Vraj
 Caleb
 Timon
 Pushkar
-WIP
+Peter
 
 1.) Read the README
 
@@ -13,13 +13,14 @@ WIP
 
 3.) IF ON SERVER: Do things on server manager (enable powershell, remove features/roles)
 
-4.) Import inf files for group policy
+4.) Import inf files for security policy, checking score after each one to see
+what vulnerabilities have been gotten
 
-5.) Run SCM baselines
+5.) Run SCM baselines, check vulns
 
-6.) Import DISA Stig
+6.) Import DISA Stig, check vulns
 
-7.) Audit policy templates
+7.) Audit policy templates, check vulns
 
 8.) Note down all the vulnerabilities and restart image
 
@@ -36,6 +37,8 @@ WIP
 14.) Change all user passwords to secure ones
 
 15.) Enable firewall (+ template)
+
+16.) Check firewall exceptions
 
 16.) Nessus scan
 
