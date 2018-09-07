@@ -10,9 +10,6 @@ echo     This script is dedicated to Drake
 echo  because he make sure that north-side eat
 echo ==========================================
 echo.
-echo.
-echo Remember to check everything fully and be dank.
-echo.
 
 pause
 
@@ -25,21 +22,23 @@ set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -No
 
 :: Motivational Speech
 cls
-echo Reminders!
+echo Reminders! PLEASE READ
 echo.
 echo - For any prompt, you can type "n" or "re" 
 echo   to skip that choice or go back to menu, respectively.
 echo.
-echo - Focus on the current section you're on very goodly!
+echo - Read the messages that show up so you don't forget stuff.
 echo.
-echo - **WHEN YOU SWITCH**, go over every thing again
-echo   (Assume they did nothing)
+echo - MAKE NOTE of each step you have done in case
+echo   of a screw up *ahem* Timon
 echo.
-echo - Read the notes in the CMD window so you don't forget crucial stuff.
+echo - Follow checklist/script closely and don't forget simple stuff.
+echo   (Also double, triple check cause script sometimes broken)
 echo.
-echo - Don't be Vraj or Jack or Timon.
+pause
 echo.
-
+echo Did ya read it all? DID YA?
+echo.
 pause
 
 :: Set stickykeys to CMD
@@ -1103,7 +1102,7 @@ pause
 cls
 echo Official checklist
 echo.
-start /d "%desktop%\Win7CompFiles" OfficialWin7Checklist.pdf
+start /d "%compfiles%" OfficialServer2016Checklist.docx
 pause
 
 if %automode% == true goto end

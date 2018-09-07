@@ -112,7 +112,7 @@ echo c) Enable Firewall                 r) Operating system settings
 echo d) Nessus                          s) Defensive Countermeasures
 echo e) MMC Stuff                       t) Prohibited files
 echo f) Readme Requirements             u) Random list of things at the end
-echo.                                   
+echo.
 echo v) Open DankMMC
 echo w) Open official checklist
 echo x) Open master checklist
@@ -628,7 +628,7 @@ goto menu
 :20
 cls
 if %automode% == true (
-	sc stop tlnts
+	sc stop tlntsvr
 	sc config tlntsvr start= disabled
 	sc stop msftpsvc
 	sc config msftpsvc start= disabled
