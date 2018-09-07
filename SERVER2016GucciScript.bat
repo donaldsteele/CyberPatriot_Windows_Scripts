@@ -21,7 +21,7 @@ set automode=false
 mode con: cols=100 lines=22
 set desktop=%desktop%
 set compfiles=%compfiles%
-set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
 
 :: Motivational Speech
 cls
@@ -145,6 +145,14 @@ if %automode% == true (
 	echo.
 
 	reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
+	
+	cls
+	echo Windows Update yeet
+	echo Still gotta start it manually oof
+	echo.
+	start wuapp.exe
+	pause
+	
 	goto 3
 )
 

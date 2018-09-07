@@ -18,25 +18,27 @@ set automode=false
 mode con: cols=100 lines=22
 set desktop=%desktop%
 set compfiles=%compfiles%
-set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
 
 :: Motivational Speech
 cls
-echo Reminders!
+echo Reminders! PLEASE READ
 echo.
 echo - For any prompt, you can type "n" or "re" 
 echo   to skip that choice or go back to menu, respectively.
 echo.
-echo - Focus on the current section you're on very goodly!
+echo - Read the messages that show up so you don't forget stuff.
 echo.
-echo - **WHEN YOU SWITCH**, go over every thing again
-echo   (Assume they did nothing)
+echo - MAKE NOTE of each step you have done in case
+echo   of a screw up *ahem* Timon
 echo.
-echo - Read the notes in the CMD window so you don't forget crucial stuff.
+echo - Follow checklist/script closely and don't forget simple stuff.
+echo   (Also double, triple check cause script sometimes broken)
 echo.
-echo - Don't be Vraj or Jack or Timon.
+pause
 echo.
-
+echo Did ya read it all? DID YA?
+echo.
 pause
 
 :: Set stickykeys to CMD
@@ -146,6 +148,13 @@ if %automode% == true (
 	if %processor_architecture% == x86 start /d "%desktop%" Win7ServicePack32bit.exe
 	if %processor_architecture% == AMD64 start /d "%desktop%" Win7ServicePack64bit.exe
 
+	cls
+	echo Windows Update yeet
+	echo Still gotta start it manually oof
+	echo.
+	start wuapp.exe
+	pause
+	
 	goto 3
 )
 
