@@ -16,8 +16,8 @@ pause
 :: Setup
 set automode=false
 mode con: cols=100 lines=22
-set desktop=%desktop%
-set compfiles=%compfiles%
+set desktop=%userprofile%\Desktop
+set compfiles=%desktop%\Win10CompFiles
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
 
 :: Motivational Speech
