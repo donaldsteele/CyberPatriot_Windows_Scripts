@@ -187,21 +187,21 @@ goto menu
 :4
 
 cls
-set /p inf="Enabled or Disabled Inf? (e/d) "
-if %inf% == e goto enabledinf
-if %inf% == d goto disabledinf
+set /p inf="Good or Bad Inf? (g/b) "
+if %inf% == g goto goodinf
+if %inf% == b goto badinf
 if %inf% == re goto menu
 if %inf% == n (
 	if %automode% == true goto 5
 	goto menu
 )
 
-:enabledinf
+:goodinf
 cls
 secedit /configure /db "%systemroot%\dankdatabase1.db" /cfg "%compfiles%\Server2016EnabledInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
-echo Enabled INF Done!
+echo Good INF Done!
 echo.
 echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 echo.
@@ -210,12 +210,12 @@ pause
 
 goto 4
 
-:disabledinf
+:badinf
 cls
 secedit /configure /db "%systemroot%\dankdatabase2.db" /cfg "%compfiles%\Server2016DisabledInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
-echo Disabled Inf Done!
+echo Bad Inf Done!
 echo.
 echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 echo.

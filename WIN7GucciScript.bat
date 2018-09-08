@@ -24,7 +24,7 @@ set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -No
 cls
 echo Reminders! PLEASE READ
 echo.
-echo - For any prompt, you can type "n" or "re" 
+echo - For any prompt, you can type "n" or "re"
 echo   to skip that choice or go back to menu, respectively.
 echo.
 echo - Read the messages that show up so you don't forget stuff.
@@ -154,7 +154,7 @@ if %automode% == true (
 	echo.
 	start wuapp.exe
 	pause
-	
+
 	goto 3
 )
 
@@ -175,21 +175,21 @@ goto menu
 :3
 
 cls
-set /p inf="Enabled or Disabled Inf? (e/d) "
-if %inf% == e goto enabledinf
-if %inf% == d goto disabledinf
+set /p inf="Good or Bad Inf? (g/b) "
+if %inf% == g goto goodinf
+if %inf% == b goto badinf
 if %inf% == re goto menu
 if %inf% == n (
 	if %automode% == true goto 4
 	goto menu
 )
 
-:enabledinf
+:goodinf
 cls
 secedit /configure /db "%systemroot%\dankdatabase1.db" /cfg "%compfiles%\Win7EnabledInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
-echo Enabled INF Done!
+echo Good INF Done!
 echo.
 echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 echo.
@@ -198,12 +198,12 @@ pause
 
 goto 3
 
-:disabledinf
+:badinf
 cls
 secedit /configure /db "%systemroot%\dankdatabase2.db" /cfg "%compfiles%\Win7DisabledInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
-echo Disabled Inf Done!
+echo Bad Inf Done!
 echo.
 echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 echo.
