@@ -210,8 +210,11 @@ goto 3
 cls
 winver
 set /p ver="Enter the version of windows this is... "
-echo.
-pause
+if %ver% == n (
+	if %automode% == true goto 5
+	goto menu
+)
+if %ver% == re goto menu
 
 if %ver% == 1507 (
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\Computer_Sec"
