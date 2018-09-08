@@ -179,7 +179,7 @@ if %inf% == n (
 
 :enabledinf
 cls
-secedit /configure /db "%systemroot%\dankdatabase1.db" /cfg "%compfiles%\Win10EnabledInf.inf"
+secedit /configure /db "%systemroot%\dankdatabase1.db" /cfg "%compfiles%\Win10GoodInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
 echo Enabled INF Done!
@@ -193,7 +193,7 @@ goto 3
 
 :disabledinf
 cls
-secedit /configure /db "%systemroot%\dankdatabase2.db" /cfg "%compfiles%\Win10DisabledInf.inf"
+secedit /configure /db "%systemroot%\dankdatabase2.db" /cfg "%compfiles%\Win10BadInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
 echo Disabled Inf Done!
