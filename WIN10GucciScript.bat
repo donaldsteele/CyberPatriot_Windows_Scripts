@@ -221,6 +221,14 @@ if %ver% == 1507 (
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\User_Sec_2"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\BitLocker_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\CredGuard_Sec"
+	cls
+	echo SCM Baselines Done!
+	echo.
+	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
+	echo.
+	pause
+	if %automode% == true goto 5
+	goto menu
 )
 
 if %ver% == 1511 (
@@ -231,6 +239,14 @@ if %ver% == 1511 (
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\User_Sec_2"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\BitLocker_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\CredGuard_Sec"
+	cls
+	echo SCM Baselines Done!
+	echo.
+	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
+	echo.
+	pause
+	if %automode% == true goto 5
+	goto menu
 )
 
 if %ver% == 1607 (
@@ -242,6 +258,14 @@ if %ver% == 1607 (
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\BitLocker_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\CredGuard_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\Defender_Sec"
+	cls
+	echo SCM Baselines Done!
+	echo.
+	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
+	echo.
+	pause
+	if %automode% == true goto 5
+	goto menu
 )
 
 if %ver% == 1703 (
@@ -253,6 +277,14 @@ if %ver% == 1703 (
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\BitLocker_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\CredGuard_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\Defender_Sec"
+	cls
+	echo SCM Baselines Done!
+	echo.
+	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
+	echo.
+	pause
+	if %automode% == true goto 5
+	goto menu
 )
 
 if %ver% == 1709 (
@@ -264,6 +296,14 @@ if %ver% == 1709 (
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\BitLocker_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\CredGuard_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\Defender_Sec"
+	cls
+	echo SCM Baselines Done!
+	echo.
+	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
+	echo.
+	pause
+	if %automode% == true goto 5
+	goto menu
 )
 
 if %ver% == 1803 (
@@ -275,6 +315,14 @@ if %ver% == 1803 (
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\BitLocker_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\CredGuard_Sec"
 	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\Defender_Sec"
+	cls
+	echo SCM Baselines Done!
+	echo.
+	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
+	echo.
+	pause
+	if %automode% == true goto 5
+	goto menu
 )
 
 else (
@@ -284,18 +332,6 @@ else (
 	pause
 	goto 4
 )
-
-cls
-echo SCM Baselines Done!
-echo.
-echo Check the scoring report and copy/paste the vulnerabilities into notepad.
-echo.
-
-pause
-
-if %automode% == true goto 5
-
-goto menu
 
 :: Audit Policy
 :5
