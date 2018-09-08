@@ -24,7 +24,7 @@ set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -No
 cls
 echo Reminders! PLEASE READ
 echo.
-echo - For any prompt, you can type "n" or "re" 
+echo - For any prompt, you can type "n" or "re"
 echo   to skip that choice or go back to menu, respectively.
 echo.
 echo - Read the messages that show up so you don't forget stuff.
@@ -144,14 +144,14 @@ if %automode% == true (
 	echo.
 
 	reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
-	
+
 	cls
 	echo Windows Update yeet
 	echo Still gotta start it manually oof
 	echo.
-	start wuapp.exe
+	start ms-settings:windowsupdate
 	pause
-	
+
 	goto 3
 )
 
