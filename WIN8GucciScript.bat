@@ -61,6 +61,7 @@ cls
 choco feature enable -n allowGlobalConfirmation
 
 choco install git
+set PATH=%programfiles%\Git\bin;%PATH%
 
 cd %desktop%
 git init
