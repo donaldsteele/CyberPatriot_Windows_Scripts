@@ -180,7 +180,7 @@ if %inf% == n (
 
 :goodinf
 cls
-secedit /configure /db "%systemroot%\dankdatabase1.db" /cfg "%compfiles%\Win8EnabledInf.inf"
+secedit /configure /db "%systemroot%\dankdatabase1.db" /cfg "%compfiles%\Win8GoodInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
 echo Good INF Done!
@@ -194,7 +194,7 @@ goto 3
 
 :badinf
 cls
-secedit /configure /db "%systemroot%\dankdatabase2.db" /cfg "%compfiles%\Win8DisabledInf.inf"
+secedit /configure /db "%systemroot%\dankdatabase2.db" /cfg "%compfiles%\Win8BadInf.inf"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 cls
 echo Bad Inf Done!
