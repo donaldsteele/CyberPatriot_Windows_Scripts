@@ -355,9 +355,13 @@ goto menu
 :: GPting
 :gpting
 cls
-echo Alrighty, my dude. Get all the Group Policy stuff done.
-echo Basically make sure you didn't miss anything in MMC.
+echo Alrighty, my dude. Cat-Lite scanner is gonna run now.
 echo.
+echo Look for failed things that aren't included in infs.
+echo.
+echo Get timon to be dank and read tings oof.
+echo.
+start /d "%compfiles%\cis-cat-lite" CISCAT.jar
 
 pause
 
