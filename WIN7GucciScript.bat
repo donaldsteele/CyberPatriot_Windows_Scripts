@@ -19,6 +19,8 @@ mode con: cols=100 lines=22
 set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Win7CompFiles
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
+set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%
+del /f /q C:\users.txt C:\approved_users.txt C:\approved_users_gucci.txt C:\users_admins.txt C:\mediafiles.txt C:\sketchyfiles.txt C:\eek.txt
 
 :: Motivational Speech
 cls
@@ -61,7 +63,6 @@ cls
 choco feature enable -n allowGlobalConfirmation
 
 choco install git
-set PATH=%programfiles%\Git\bin;%PATH%
 
 cd %desktop%
 git init
