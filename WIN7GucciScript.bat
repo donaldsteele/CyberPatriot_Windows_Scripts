@@ -20,7 +20,7 @@ set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Win7CompFiles
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
 set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%
-del /f /q C:\users.txt C:\approved_users.txt C:\approved_users_gucci.txt C:\users_admins.txt C:\mediafiles.txt C:\sketchyfiles.txt C:\eek.txt
+del /f /q C:\mediafiles.txt C:\sketchyfiles.txt C:\eek.txt
 
 :: Motivational Speech
 cls
@@ -291,26 +291,34 @@ echo.
 
 pause
 
-if %automode% == true goto userfile
+if %automode% == true goto 8
 
 goto menu
 
-:: Add users to file
-:userfile
-cls
-echo Add the users to the user file.
-echo.
-
-net user
-
-start /d "%compfiles%" users.txt
-
-pause
-
-goto 8
-
 :: Add/Delete Users
 :8
+if %automode% == true (
+	%pshellrun% Get-LocalUser > C:\usertemp_ps.txt
+
+	for /f "skip=3" %%G in (C:\usertemp_ps.txt) do (echo %%G >> C:\users_admins.txt)
+	findstr /v "BroPants BroShirt DefaultAccount defaultaccount0" C:\users_admins.txt > C:\users.txt
+	call jrepl " +$" "" /f C:\users.txt /o -
+	call jrepl " +$" "" /f C:\users_admins.txt /o -
+
+	del /f /q C:\usertemp_ps.txt C:\usertemp_1.txt
+
+	echo Please put all the users from README, including admins here and save then close > C:\approved_users.txt
+	echo Replace these 2 lines btw smh >> C:\approved_users.txt
+	start C:\approved_users.txt
+	pause
+
+	sort < C:\approved_users.txt > C:\approved_users_gucci.txt
+
+	diffchecker C:\approved_users_gucci.txt C:\users.txt
+
+	goto userchoice
+)
+:userchoice
 cls
 net user
 
