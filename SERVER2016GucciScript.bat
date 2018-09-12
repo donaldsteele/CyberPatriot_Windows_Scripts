@@ -300,11 +300,12 @@ goto menu
 
 :: Add/Delete Users
 :8
+cls
 if %automode% == true (
 	%pshellrun% Get-LocalUser > C:\usertemp_ps.txt
 
 	for /f "skip=3" %%G in (C:\usertemp_ps.txt) do (echo %%G >> C:\users_admins.txt)
-	findstr /v "BroPants BroShirt DefaultAccount defaultaccount0" C:\users_admins.txt > C:\users.txt
+	findstr /v "BroPants BroShirt DefaultAccount defaultuser0" C:\users_admins.txt > C:\users.txt
 	call jrepl " +$" "" /f C:\users.txt /o -
 	call jrepl " +$" "" /f C:\users_admins.txt /o -
 
