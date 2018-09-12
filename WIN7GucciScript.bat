@@ -70,6 +70,11 @@ git remote add origin https://github.com/Marduk28/CyberPatriot_Windows_Scripts.g
 git fetch origin master
 git checkout origin/master Win7CompFiles OurGloriousChecklist2018_Windows.txt
 
+:: Install diffchecker CLI
+cls
+choco install nodejs
+call npm install -g diffchecker
+
 :: Ask if menu or automode
 :autochoice
 cls
