@@ -470,7 +470,7 @@ goto deladmins
 :12
 if %automode% == true (
 	cls
-	for /f "skip=2 eol=;" %%a in (%compfiles%\users.txt) do net user %%a abc123ABC123@@
+	for /f %%G in (C:\users_admins.txt) do net user %%G abc123ABC123@@
 	goto 13
 )
 
