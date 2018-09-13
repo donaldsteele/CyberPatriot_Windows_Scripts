@@ -362,12 +362,14 @@ goto menu
 :: GPting
 :gpting
 cls
-echo Alrighty, my dude. Cat-Lite scanner is gonna run now.
+echo Alrighty, my dude. Cat-Lite scanner is gonna run in a moment.
 echo.
 echo Look for failed things that aren't included in infs.
 echo.
 echo Get timon to be dank and read tings oof.
 echo.
+
+choco install jre8
 start /d "%compfiles%\cis-cat-lite" CISCAT.jar
 
 pause
