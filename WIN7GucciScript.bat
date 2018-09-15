@@ -361,6 +361,10 @@ if %automode% == true (
 	net user BroShirt /active:no
 	net user BroPants /active:no
 	for /f %%G in (C:\users.txt) do net user %%G /active:yes
+	cls
+	echo Activate users done!
+	echo.
+	pause
 	goto 10
 )
 
@@ -446,6 +450,10 @@ goto deladmins
 if %automode% == true (
 	cls
 	for /f %%G in (C:\users_admins.txt) do net user %%G abc123ABC123@@
+	cls
+	echo Change all passwords done!
+	echo.
+	pause
 	goto 12
 )
 
@@ -472,6 +480,10 @@ netsh advfirewall import "%compfiles%\Win7Firewall.wfw"
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
 netsh advfirewall set allprofiles state on
 if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
+cls
+echo Firewall enabled!
+echo.
+pause
 cls
 echo Check firewall exceptions for sketchiness...
 echo.
