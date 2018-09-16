@@ -38,7 +38,7 @@ echo - Follow checklist/script closely and don't forget simple stuff.
 echo   (Also double, triple check cause script sometimes broken)
 echo.
 pause
-echo.
+cls
 echo Did ya read it all? DID YA?
 echo.
 pause
@@ -56,25 +56,26 @@ cls
 set /p cont="Is this first time setup? (y/n) "
 if %cont% == n goto autochoice
 
-:: Install git and pull from master
+:: Install initial things
 cls
+echo Installing initial things...
+echo.
 %pshellrun% "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 choco feature enable -n allowGlobalConfirmation
 
-choco install git
-set PATH=%programfiles%\Git\bin;%PATH%
+choco install git nodejs powershell --ignorechecksum
+call npm install -g diffchecker
 
+:: Pull from github
+cls
+echo Downloading files from github...
+echo.
 cd %desktop%
 git init
 git remote add origin https://github.com/Marduk28/CyberPatriot_Windows_Scripts.git
 git fetch origin master
-git checkout origin/master Server2016CompFiles OurGloriousChecklist2018_Windows.txt
-
-:: Install diffchecker CLI
-cls
-choco install nodejs
-call npm install -g diffchecker
+git checkout origin/master Win7CompFiles OurGloriousChecklist2018_Windows.txt
 
 :: Ask if menu or automode
 :autochoice
