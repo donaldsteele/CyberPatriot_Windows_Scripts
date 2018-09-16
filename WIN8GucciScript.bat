@@ -15,6 +15,8 @@ pause
 
 :: Setup
 set automode=false
+set return=false
+set return_number=0
 mode con: cols=100 lines=22
 set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Win8CompFiles
@@ -294,6 +296,7 @@ goto menu
 :8
 cls
 if %automode% == true (
+	:getuserlist
 	%pshellrun% Get-LocalUser > C:\usertemp_ps.txt
 
 	for /f "skip=3" %%G in (C:\usertemp_ps.txt) do (echo %%G >> C:\users_admins.txt)
@@ -309,6 +312,8 @@ if %automode% == true (
 	pause
 
 	sort < C:\approved_users.txt > C:\approved_users_gucci.txt
+
+	if %return% == true goto %return_number%
 
 	diffchecker C:\approved_users_gucci.txt C:\users.txt
 
@@ -351,11 +356,17 @@ goto delusers
 
 :: Activate/Disable Users
 :9
+if not exist C:\users.txt (
+	set return=true
+	set return_number=9
+	goto getuserlist
+)
+
 if %automode% == true (
 	cls
 	net user BroShirt /active:no
 	net user BroPants /active:no
-	for /f %%G in (C:\users_admins.txt) do net user %%G /active:yes
+	for /f %%G in (C:\users.txt) do net user %%G /active:yes
 	cls
 	echo Activate users done!
 	echo.
@@ -442,6 +453,12 @@ goto deladmins
 
 :: Changing passwords
 :11
+if not exist C:\users_admins.txt (
+	set return=true
+	set return_number=11
+	goto getuserlist
+)
+
 if %automode% == true (
 	cls
 	for /f %%G in (C:\users_admins.txt) do net user %%G abc123ABC123@@
