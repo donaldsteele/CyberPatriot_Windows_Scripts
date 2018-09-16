@@ -75,7 +75,7 @@ cd %desktop%
 git init
 git remote add origin https://github.com/Marduk28/CyberPatriot_Windows_Scripts.git
 git fetch origin master
-git checkout origin/master Win7CompFiles OurGloriousChecklist2018_Windows.txt
+git checkout origin/master Server2008CompFiles OurGloriousChecklist2018_Windows.txt
 
 :: Ask if menu or automode
 :autochoice
