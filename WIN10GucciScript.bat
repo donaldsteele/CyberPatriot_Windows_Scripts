@@ -346,7 +346,17 @@ start /d "%compfiles%\cis-cat-lite" CISCAT.jar
 
 pause
 
-goto 5
+goto restart
+
+:restart
+cls
+echo Now restart and open a new image and get all the points back.
+echo.
+echo IDK exactly why but Dr. Kowal recommends it and yea its dope.
+echo.
+pause
+
+exit
 
 :: Windows Update
 :5
