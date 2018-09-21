@@ -109,11 +109,11 @@ else (
 :menu
 cls
 echo 1) README                          g) Event Viewer
-echo 2) Windows Update + Service Pack   h) Sysinternals
-echo 3) Inf files                       i) Install programs
-echo 4) SCM OS baselines                j) Update programs
-echo 5) DISA Stig                       k) Services
-echo 6) Audit Policy                    l) Media files
+echo 2) Inf files                       h) Sysinternals
+echo 3) SCM OS baselines                i) Install programs
+echo 4) DISA Stig                       j) Update programs
+echo 5) Audit Policy                    k) Services
+echo 6) Windows Update + Service Pack   l) Media files
 echo 7) Forensics                       m) Remove programs + features
 echo 8) Add/Delete users                n) SCM IE baselines
 echo 9) Activate/Disable users          o) Backup
@@ -144,46 +144,8 @@ if %automode% == true goto 2
 
 goto menu
 
-:: Windows Update + Service Pack
-:2
-if %automode% == true (
-	cls
-	sc config wuauserv start= auto
-	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
-	sc start wuauserv
-	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
-	echo.
-
-	reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
-
-	if %processor_architecture% == x86 start /d "%desktop%" Win7ServicePack32bit.exe
-	if %processor_architecture% == AMD64 start /d "%desktop%" Win7ServicePack64bit.exe
-
-	cls
-	echo Windows Update yeet
-	echo Still gotta start it manually oof
-	echo.
-	start wuapp.exe
-	pause
-
-	goto 3
-)
-
-cls
-echo Set automatic updates.
-echo.
-
-start wuapp.exe
-
-if %processor_architecture% == x86 start /d "%compfiles%" Win7ServicePack32bit.exe
-if %processor_architecture% == AMD64 start /d "%compfiles%" Win7ServicePack64bit.exe
-
-pause
-
-goto menu
-
 :: Inf files
-:3
+:2
 
 cls
 set /p inf="Good or Bad Inf? (g/b) "
@@ -191,7 +153,7 @@ if %inf% == g goto goodinf
 if %inf% == b goto badinf
 if %inf% == re goto menu
 if %inf% == n (
-	if %automode% == true goto 4
+	if %automode% == true goto 3
 	goto menu
 )
 
@@ -207,7 +169,7 @@ echo.
 
 pause
 
-goto 3
+goto 2
 
 :badinf
 cls
@@ -221,10 +183,10 @@ echo.
 
 pause
 
-goto 3
+goto 2
 
 :: SCM OS Baselines
-:4
+:3
 cls
 
 "%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win7\Computer_Sec"
@@ -239,12 +201,12 @@ echo.
 
 pause
 
-if %automode% == true goto 5
+if %automode% == true goto 4
 
 goto menu
 
 :: DISA Stig
-:5
+:4
 cls
 
 secedit /configure /db "%systemroot%\dankdatabase3.db" /cfg "%compfiles%\Win7DISAStig.inf"
@@ -257,12 +219,12 @@ echo.
 
 pause
 
-if %automode% == true goto 6
+if %automode% == true goto 5
 
 goto menu
 
 :: Audit Policy
-:6
+:5
 cls
 echo Import the two audit templates (AllAudit then NoAudit)
 echo.
@@ -285,7 +247,45 @@ echo.
 
 pause
 
-goto 7
+goto 6
+
+:: Windows Update + Service Pack
+:6
+if %automode% == true (
+	cls
+	sc config wuauserv start= auto
+	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
+	sc start wuauserv
+	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
+	echo.
+
+	reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
+
+	if %processor_architecture% == x86 start /d "%desktop%" Win7ServicePack32bit.exe
+	if %processor_architecture% == AMD64 start /d "%desktop%" Win7ServicePack64bit.exe
+
+	cls
+	echo Windows Update yeet
+	echo Still gotta start it manually oof
+	echo.
+	start wuapp.exe
+	pause
+
+	goto 7
+)
+
+cls
+echo Set automatic updates.
+echo.
+
+start wuapp.exe
+
+if %processor_architecture% == x86 start /d "%compfiles%" Win7ServicePack32bit.exe
+if %processor_architecture% == AMD64 start /d "%compfiles%" Win7ServicePack64bit.exe
+
+pause
+
+goto menu
 
 :: Forensics
 :7

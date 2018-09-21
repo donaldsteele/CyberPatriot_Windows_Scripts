@@ -108,21 +108,21 @@ else (
 :: Menu
 :menu
 cls
-echo 1) README                          f) Event Viewer
-echo 2) Windows Update                  g) Sysinternals
-echo 3) Inf files                       h) Install programs
-echo 4) SCM OS baselines                i) Update programs
-echo 5) Audit Policy                    j) Services
-echo 6) Forensics                       k) Media files
-echo 7) Add/Delete users                l) Remove programs + features
-echo 8) Activate/Disable users          m) SCM IE baselines
-echo 9) Add/Delete admins               n) Backup
-echo a) Change passwords                o) Application Settings
-echo b) Enable Firewall                 p) Hosts file
-echo c) Nessus                          q) Operating system settings
-echo d) MMC Stuff                       r) Defensive Countermeasures
-echo e) Readme Requirements             s) Prohibited files
-echo                                    t) Random list of things at the end
+echo 1) README                   f) Event Viewer
+echo 2) Inf files                g) Sysinternals
+echo 3) SCM OS baselines         h) Install programs
+echo 4) Audit Policy             i) Update programs
+echo 5) Windows Update           j) Services
+echo 6) Forensics                k) Media files
+echo 7) Add/Delete users         l) Remove programs + features
+echo 8) Activate/Disable users   m) SCM IE baselines
+echo 9) Add/Delete admins        n) Backup
+echo a) Change passwords         o) Application Settings
+echo b) Enable Firewall          p) Hosts file
+echo c) Nessus                   q) Operating system settings
+echo d) MMC Stuff                r) Defensive Countermeasures
+echo e) Readme Requirements      s) Prohibited files
+echo                             t) Random list of things at the end
 echo.
 echo u) Open DankMMC
 echo v) Open official checklist
@@ -144,39 +144,8 @@ if %automode% == true goto 2
 
 goto menu
 
-:: Windows Update
-:2
-if %automode% == true (
-	cls
-	sc config wuauserv start= auto
-	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
-	sc start wuauserv
-	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
-	echo.
-
-	reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
-
-	cls
-	echo Windows Update yeet
-	echo Still gotta start it manually oof
-	echo.
-	start ms-settings:windowsupdate
-	pause
-
-	goto 3
-)
-
-cls
-echo Set automatic updates.
-echo.
-
-start ms-settings:windowsupdate
-pause
-
-goto menu
-
 :: Inf files
-:3
+:2
 
 cls
 set /p inf="Good or Bad Inf? (g/b) "
@@ -184,7 +153,7 @@ if %inf% == g goto goodinf
 if %inf% == b goto badinf
 if %inf% == re goto menu
 if %inf% == n (
-	if %automode% == true goto 4
+	if %automode% == true goto 3
 	goto menu
 )
 
@@ -200,7 +169,7 @@ echo.
 
 pause
 
-goto 3
+goto 2
 
 :badinf
 cls
@@ -214,15 +183,15 @@ echo.
 
 pause
 
-goto 3
+goto 2
 
 :: SCM OS Baselines
-:4
+:3
 cls
 winver
 set /p ver="Enter the version of windows this is... "
 if %ver% == n (
-	if %automode% == true goto 5
+	if %automode% == true goto 4
 	goto menu
 )
 if %ver% == re goto menu
@@ -241,7 +210,7 @@ if %ver% == 1507 (
 	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 	echo.
 	pause
-	if %automode% == true goto 5
+	if %automode% == true goto 4
 	goto menu
 )
 
@@ -259,7 +228,7 @@ if %ver% == 1511 (
 	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 	echo.
 	pause
-	if %automode% == true goto 5
+	if %automode% == true goto 4
 	goto menu
 )
 
@@ -278,7 +247,7 @@ if %ver% == 1607 (
 	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 	echo.
 	pause
-	if %automode% == true goto 5
+	if %automode% == true goto 4
 	goto menu
 )
 
@@ -297,7 +266,7 @@ if %ver% == 1703 (
 	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 	echo.
 	pause
-	if %automode% == true goto 5
+	if %automode% == true goto 4
 	goto menu
 )
 
@@ -316,7 +285,7 @@ if %ver% == 1709 (
 	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 	echo.
 	pause
-	if %automode% == true goto 5
+	if %automode% == true goto 4
 	goto menu
 )
 
@@ -335,7 +304,7 @@ if %ver% == 1803 (
 	echo Check the scoring report and copy/paste the vulnerabilities into notepad.
 	echo.
 	pause
-	if %automode% == true goto 5
+	if %automode% == true goto 4
 	goto menu
 )
 
@@ -344,11 +313,11 @@ else (
 	echo Oof try again.
 	echo.
 	pause
-	goto 4
+	goto 3
 )
 
 :: Audit Policy
-:5
+:4
 cls
 echo Import the two audit templates (AllAudit then NoAudit)
 echo.
@@ -377,7 +346,38 @@ start /d "%compfiles%\cis-cat-lite" CISCAT.jar
 
 pause
 
-goto 6
+goto 5
+
+:: Windows Update
+:5
+if %automode% == true (
+	cls
+	sc config wuauserv start= auto
+	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
+	sc start wuauserv
+	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
+	echo.
+
+	reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
+
+	cls
+	echo Windows Update yeet
+	echo Still gotta start it manually oof
+	echo.
+	start ms-settings:windowsupdate
+	pause
+
+	goto 6
+)
+
+cls
+echo Set automatic updates.
+echo.
+
+start ms-settings:windowsupdate
+pause
+
+goto menu
 
 :: Forensics
 :6

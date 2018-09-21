@@ -109,12 +109,12 @@ else (
 :menu
 cls
 echo 1) README                          g) Readme Requirements
-echo 2) Windows Update + Service Pack   h) Event Viewer
-echo 3) Server Manager                  i) Sysinternals
-echo 4) Inf files                       j) Install programs
-echo 5) SCM OS Baselines                k) Update programs
-echo 6) DISA Stig                       l) Services
-echo 7) Audit Policy                    m) Media files
+echo 2) Server Manager                  h) Event Viewer
+echo 3) Inf files                       i) Sysinternals
+echo 4) SCM OS Baselines                j) Install programs
+echo 5) DISA Stig                       k) Update programs
+echo 6) Audit Policy                    l) Services
+echo 7) Windows Update + Service Pack   m) Media files
 echo 8) Forensics                       n) Remove programs + features
 echo 9) Add/Delete users                o) SCM IE baselines
 echo a) Activate/Disable users          p) Backup
@@ -145,44 +145,8 @@ if %automode% == true goto 2
 
 goto menu
 
-:: Windows Update + Service Pack
-:2
-if %automode% == true (
-	cls
-	sc config wuauserv start= auto
-	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
-	sc start wuauserv
-	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
-	echo.
-
-	reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
-
-	start /d "%desktop%" Server2008ServicePack32bit.exe
-
-	cls
-	echo Windows Update yeet
-	echo Still gotta start it manually oof
-	echo.
-	start wuapp.exe
-	pause
-
-	goto 3
-)
-
-cls
-echo Set automatic updates.
-echo.
-
-start wuapp.exe
-
-start /d "%compfiles%" Server2008ServicePack32bit.exe
-
-pause
-
-goto menu
-
 :: Server Manager
-:3
+:2
 cls
 echo Do all the things for Server Manager:
 echo.
@@ -196,12 +160,12 @@ start /d "%SystemRoot%\system32" CompMgmtLauncher.exe
 
 pause
 
-if %automode% == true goto 4
+if %automode% == true goto 3
 
 goto menu
 
 :: Inf files
-:4
+:3
 
 cls
 set /p inf="Good or Bad Inf? (g/b) "
@@ -209,7 +173,7 @@ if %inf% == e goto goodinf
 if %inf% == d goto badinf
 if %inf% == re goto menu
 if %inf% == n (
-	if %automode% == true goto 5
+	if %automode% == true goto 4
 	goto menu
 )
 
@@ -225,7 +189,7 @@ echo.
 
 pause
 
-goto 4
+goto 3
 
 :badinf
 cls
@@ -239,10 +203,10 @@ echo.
 
 pause
 
-goto 4
+goto 3
 
 :: SCM OS Baselines
-:5
+:4
 cls
 
 "%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Server2008\AD_Cert"
@@ -266,12 +230,12 @@ echo.
 
 pause
 
-if %automode% == true goto 6
+if %automode% == true goto 5
 
 goto menu
 
 :: DISA Stig
-:6
+:5
 cls
 
 secedit /configure /db "%systemroot%\dankdatabase3.db" /cfg "%compfiles%\Server2008DISAStig.inf"
@@ -284,12 +248,12 @@ echo.
 
 pause
 
-if %automode% == true goto 7
+if %automode% == true goto 6
 
 goto menu
 
 :: Audit Policy
-:7
+:6
 cls
 echo Import the two audit templates (AllAudit then NoAudit)
 echo.
@@ -312,7 +276,43 @@ echo.
 
 pause
 
-goto 8
+goto 7
+
+:: Windows Update + Service Pack
+:7
+if %automode% == true (
+	cls
+	sc config wuauserv start= auto
+	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
+	sc start wuauserv
+	if %errorlevel% == 1 echo. && echo Uh oh. Error happened.
+	echo.
+
+	reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
+
+	start /d "%desktop%" Server2008ServicePack32bit.exe
+
+	cls
+	echo Windows Update yeet
+	echo Still gotta start it manually oof
+	echo.
+	start wuapp.exe
+	pause
+
+	goto 8
+)
+
+cls
+echo Set automatic updates.
+echo.
+
+start wuapp.exe
+
+start /d "%compfiles%" Server2008ServicePack32bit.exe
+
+pause
+
+goto menu
 
 :: Forensics
 :8
