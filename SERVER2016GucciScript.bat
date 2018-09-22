@@ -20,8 +20,9 @@ set return_number=0
 mode con: cols=100 lines=22
 set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Server2016CompFiles
+set scm=%compfiles%\SCMBaselines
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
-set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%
+set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%;%scm%
 del /f /q C:\users.txt C:\approved_users.txt C:\approved_users_gucci.txt C:\users_admins.txt C:\mediafiles.txt C:\sketchyfiles.txt C:\eek.txt
 
 :: Motivational Speech
@@ -206,17 +207,17 @@ goto 3
 :4
 cls
 
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_2"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Computer_Sec_3"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Domain_Sec_2"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Member_Sec"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\User_Sec_2"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\BitLocker_Sec"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\CredGuard_Sec"
-"%desktop%\Win10CompFiles\SCMBaselines\LGPO.exe" /g "%desktop%\Win10CompFiles\SCMBaselines\Win10_1607_Server2016\Defender_Sec"
+LGPO /g "%scm%\Win10_1607_Server2016\Computer_Sec"
+LGPO /g "%scm%\Win10_1607_Server2016\Computer_Sec_2"
+LGPO /g "%scm%\Win10_1607_Server2016\Computer_Sec_3"
+LGPO /g "%scm%\Win10_1607_Server2016\Domain_Sec"
+LGPO /g "%scm%\Win10_1607_Server2016\Domain_Sec_2"
+LGPO /g "%scm%\Win10_1607_Server2016\Member_Sec"
+LGPO /g "%scm%\Win10_1607_Server2016\User_Sec"
+LGPO /g "%scm%\Win10_1607_Server2016\User_Sec_2"
+LGPO /g "%scm%\Win10_1607_Server2016\BitLocker_Sec"
+LGPO /g "%scm%\Win10_1607_Server2016\CredGuard_Sec"
+LGPO /g "%scm%\Win10_1607_Server2016\Defender_Sec"
 
 cls
 echo SCM Baselines Done!
@@ -994,8 +995,8 @@ goto menu
 :: SCM IE Baselines
 :23
 cls
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\IE11_Com_Sec"
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\IE11_User_Sec"
+LGPO /g "%scm%\IE11_Com_Sec"
+LGPO /g "%scm%\IE11_User_Sec"
 
 if %automode% == true goto 24
 

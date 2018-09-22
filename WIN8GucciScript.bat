@@ -20,8 +20,9 @@ set return_number=0
 mode con: cols=100 lines=22
 set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Win8CompFiles
+set scm=%compfiles%\SCMBaselines
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
-set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%
+set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%;%scm%
 del /f /q C:\users.txt C:\approved_users.txt C:\approved_users_gucci.txt C:\users_admins.txt C:\mediafiles.txt C:\sketchyfiles.txt C:\eek.txt
 
 :: Motivational Speech
@@ -192,10 +193,10 @@ goto 2
 :3
 cls
 
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win8\Computer_Sec"
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win8\Domain_Sec"
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win8\User_Sec"
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win8\BitLocker_Sec"
+LGPO /g "%scm%\Win8\Computer_Sec"
+LGPO /g "%scm%\Win8\Domain_Sec"
+LGPO /g "%scm%\Win8\User_Sec"
+LGPO /g "%scm%\Win8\BitLocker_Sec"
 cls
 echo SCM Baselines Done!
 echo.
@@ -967,8 +968,8 @@ goto menu
 :: SCM IE Baselines
 :23
 cls
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\IE11_Com_Sec"
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\IE11_User_Sec"
+LGPO /g "%compfiles%\SCMBaselines\IE11_Com_Sec"
+LGPO /g "%compfiles%\SCMBaselines\IE11_User_Sec"
 
 if %automode% == true goto 24
 

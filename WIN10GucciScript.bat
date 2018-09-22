@@ -20,8 +20,9 @@ set return_number=0
 mode con: cols=100 lines=22
 set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Win10CompFiles
+set scm=%compfiles%\SCMBaselines
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
-set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%
+set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%;%scm%
 del /f /q C:\users.txt C:\approved_users.txt C:\approved_users_gucci.txt C:\users_admins.txt C:\mediafiles.txt C:\sketchyfiles.txt C:\eek.txt
 
 :: Motivational Speech
@@ -200,13 +201,13 @@ if %ver% == n (
 if %ver% == re goto menu
 
 if %ver% == 1507 (
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\Computer_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\Computer_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\Domain_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\User_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\User_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\BitLocker_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1507\CredGuard_Sec"
+	LGPO /g "%scm%\Win10_1507\Computer_Sec"
+	LGPO /g "%scm%\Win10_1507\Computer_Sec_2"
+	LGPO /g "%scm%\Win10_1507\Domain_Sec"
+	LGPO /g "%scm%\Win10_1507\User_Sec"
+	LGPO /g "%scm%\Win10_1507\User_Sec_2"
+	LGPO /g "%scm%\Win10_1507\BitLocker_Sec"
+	LGPO /g "%scm%\Win10_1507\CredGuard_Sec"
 	cls
 	echo SCM Baselines Done!
 	echo.
@@ -218,13 +219,13 @@ if %ver% == 1507 (
 )
 
 if %ver% == 1511 (
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\Computer_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\Computer_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\Domain_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\User_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\User_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\BitLocker_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1511\CredGuard_Sec"
+	LGPO /g "%scm%\Win10_1511\Computer_Sec"
+	LGPO /g "%scm%\Win10_1511\Computer_Sec_2"
+	LGPO /g "%scm%\Win10_1511\Domain_Sec"
+	LGPO /g "%scm%\Win10_1511\User_Sec"
+	LGPO /g "%scm%\Win10_1511\User_Sec_2"
+	LGPO /g "%scm%\Win10_1511\BitLocker_Sec"
+	LGPO /g "%scm%\Win10_1511\CredGuard_Sec"
 	cls
 	echo SCM Baselines Done!
 	echo.
@@ -236,14 +237,14 @@ if %ver% == 1511 (
 )
 
 if %ver% == 1607 (
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\Computer_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\Computer_Sec_3"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\Domain_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\User_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\User_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\BitLocker_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\CredGuard_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1607_Server2016\Defender_Sec"
+	LGPO /g "%scm%\Win10_1607_Server2016\Computer_Sec"
+	LGPO /g "%scm%\Win10_1607_Server2016\Computer_Sec_3"
+	LGPO /g "%scm%\Win10_1607_Server2016\Domain_Sec"
+	LGPO /g "%scm%\Win10_1607_Server2016\User_Sec"
+	LGPO /g "%scm%\Win10_1607_Server2016\User_Sec_2"
+	LGPO /g "%scm%\Win10_1607_Server2016\BitLocker_Sec"
+	LGPO /g "%scm%\Win10_1607_Server2016\CredGuard_Sec"
+	LGPO /g "%scm%\Win10_1607_Server2016\Defender_Sec"
 	cls
 	echo SCM Baselines Done!
 	echo.
@@ -255,14 +256,14 @@ if %ver% == 1607 (
 )
 
 if %ver% == 1703 (
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\Computer_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\Computer_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\Domain_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\User_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\User_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\BitLocker_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\CredGuard_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1703\Defender_Sec"
+	LGPO /g "%scm%\Win10_1703\Computer_Sec"
+	LGPO /g "%scm%\Win10_1703\Computer_Sec_2"
+	LGPO /g "%scm%\Win10_1703\Domain_Sec"
+	LGPO /g "%scm%\Win10_1703\User_Sec"
+	LGPO /g "%scm%\Win10_1703\User_Sec_2"
+	LGPO /g "%scm%\Win10_1703\BitLocker_Sec"
+	LGPO /g "%scm%\Win10_1703\CredGuard_Sec"
+	LGPO /g "%scm%\Win10_1703\Defender_Sec"
 	cls
 	echo SCM Baselines Done!
 	echo.
@@ -274,14 +275,14 @@ if %ver% == 1703 (
 )
 
 if %ver% == 1709 (
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\Computer_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\Computer_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\Domain_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\User_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\User_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\BitLocker_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\CredGuard_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1709\Defender_Sec"
+	LGPO /g "%scm%\Win10_1709\Computer_Sec"
+	LGPO /g "%scm%\Win10_1709\Computer_Sec_2"
+	LGPO /g "%scm%\Win10_1709\Domain_Sec"
+	LGPO /g "%scm%\Win10_1709\User_Sec"
+	LGPO /g "%scm%\Win10_1709\User_Sec_2"
+	LGPO /g "%scm%\Win10_1709\BitLocker_Sec"
+	LGPO /g "%scm%\Win10_1709\CredGuard_Sec"
+	LGPO /g "%scm%\Win10_1709\Defender_Sec"
 	cls
 	echo SCM Baselines Done!
 	echo.
@@ -293,14 +294,14 @@ if %ver% == 1709 (
 )
 
 if %ver% == 1803 (
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\Computer_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\Computer_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\Domain_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\User_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\User_Sec_2"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\BitLocker_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\CredGuard_Sec"
-	"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\Win10_1803\Defender_Sec"
+	LGPO /g "%scm%\Win10_1803\Computer_Sec"
+	LGPO /g "%scm%\Win10_1803\Computer_Sec_2"
+	LGPO /g "%scm%\Win10_1803\Domain_Sec"
+	LGPO /g "%scm%\Win10_1803\User_Sec"
+	LGPO /g "%scm%\Win10_1803\User_Sec_2"
+	LGPO /g "%scm%\Win10_1803\BitLocker_Sec"
+	LGPO /g "%scm%\Win10_1803\CredGuard_Sec"
+	LGPO /g "%scm%\Win10_1803\Defender_Sec"
 	cls
 	echo SCM Baselines Done!
 	echo.
@@ -1089,8 +1090,8 @@ goto menu
 :: SCM IE Baselines
 :22
 cls
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\IE11_Com_Sec"
-"%compfiles%\SCMBaselines\LGPO.exe" /g "%compfiles%\SCMBaselines\IE11_User_Sec"
+LGPO /g "%scm%\IE11_Com_Sec"
+LGPO /g "%scm%\IE11_User_Sec"
 
 if %automode% == true goto 23
 
