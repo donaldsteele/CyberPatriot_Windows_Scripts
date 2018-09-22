@@ -671,7 +671,6 @@ if %install% == re goto menu
 echo.
 
 choco install %install% --ignorechecksum
-choco upgrade %install% --ignorechecksum
 
 goto install
 
