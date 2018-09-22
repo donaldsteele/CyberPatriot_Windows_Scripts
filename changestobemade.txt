@@ -8,7 +8,6 @@ Changes that need to be made:
 
 NOTES:
 
-PUT QUOTES FOR GET-LOCALUSER
 fix user list ugh
 fix userlist return back
 network access: restrict clients allowed to make remote calls to SAM

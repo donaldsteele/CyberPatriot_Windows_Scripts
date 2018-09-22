@@ -411,7 +411,7 @@ goto menu
 cls
 if %automode% == true (
 	:getuserlist
-	%pshellrun% Get-LocalUser > C:\usertemp_ps.txt
+	%pshellrun% "Get-LocalUser > C:\usertemp_ps.txt"
 
 	for /f "skip=3" %%G in (C:\usertemp_ps.txt) do (echo %%G >> C:\users_admins.txt)
 	findstr /v "BroPants BroShirt DefaultAccount defaultuser0" C:\users_admins.txt > C:\users.txt
