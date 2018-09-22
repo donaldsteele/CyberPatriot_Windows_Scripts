@@ -72,13 +72,18 @@ choco feature enable -n allowGlobalConfirmation
 
 choco install git nodejs powershell --ignorechecksum
 call npm install -g diffchecker
-rom githubb...
-echothu.
-cd %desktoprom gWindows Updatei%
-git
-clso Downloading files finit
-git remote add origin https://github.com/8/CyberPatriot_Windows_Scripts.git
-git fetch origin git checkout origin/master Server2016CompFiles OurGloriousChecklist2018_Windows.t sk if menu or automode
+
+:: Pull from github
+cls
+echo Downloading files from github...
+echo.
+cd %desktop%
+git init
+git remote add origin https://github.com/Marduk28/CyberPatriot_Windows_Scripts.git
+git fetch origin master
+git checkout origin/master Server2016CompFiles OurGloriousChecklist2018_Windows.txt
+
+:: Ask if menu or automode
 :autochoice
 cls
 echo Menu is for quick stuff ya need to do, Auto mode is main option
