@@ -755,6 +755,8 @@ if %automode% == true (
 	sc config SysMain start= disabled
 	sc config EventLog start= auto
 	sc start EventLog
+	sc stop W3SVC
+	sc config W3SVC start= disabled
 	goto manualserv
 )
 
@@ -777,6 +779,7 @@ echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo SysMain (Superfetch)
 echo EventLog (Event Log duh)
+echo W3SVC (World Wide Web Publishing)
 echo.
 
 set /p choice="Enable or Disable Service? (e/d/def) "
@@ -826,6 +829,8 @@ if %choice% == def (
 	sc config SysMain start= disabled
 	sc config EventLog start= auto
 	sc start EventLog
+	sc stop W3SVC
+	sc config W3SVC start= disabled
 	goto 21
 )
 
@@ -850,6 +855,7 @@ echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo SysMain (Superfetch)
 echo EventLog (Event Log duh)
+echo W3SVC (World Wide Web Publishing)
 echo.
 
 set /p serv="Enter a service to enable... "
@@ -882,6 +888,7 @@ echo SENS (System Event Notification Service)
 echo EventSystem (COM+ Event System)
 echo SysMain (Superfetch)
 echo EventLog (Event Log duh)
+echo W3SVC (World Wide Web Publishing)
 echo.
 
 set /p serv="Enter a service to disable... "
