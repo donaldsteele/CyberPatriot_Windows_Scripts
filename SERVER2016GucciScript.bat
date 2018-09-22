@@ -136,6 +136,7 @@ goto %errorlevel%
 cls
 echo Read the README, ya bigot higot!
 echo.
+start C:\CyberPatriot\README.url
 
 pause
 

@@ -6,8 +6,6 @@ Changes that need to be made:
 	              figure out how to automate checking maybe or just check anyway
 	- add echo Done! all over the place
 
-C:\CyberPatriot\README.html
-
 NOTES:
 
 PUT QUOTES FOR GET-LOCALUSER
