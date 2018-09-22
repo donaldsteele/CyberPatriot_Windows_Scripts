@@ -968,8 +968,8 @@ goto menu
 :: SCM IE Baselines
 :23
 cls
-LGPO /g "%compfiles%\SCMBaselines\IE11_Com_Sec"
-LGPO /g "%compfiles%\SCMBaselines\IE11_User_Sec"
+LGPO /g "%scm%\IE11_Com_Sec"
+LGPO /g "%scm%\IE11_User_Sec"
 
 if %automode% == true goto 24
 
