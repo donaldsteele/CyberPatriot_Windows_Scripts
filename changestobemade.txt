@@ -12,4 +12,3 @@ fix user list ugh
 network access: restrict clients allowed to make remote calls to SAM
 event log: view non-system default logs i guess?
 sysinternals choco install broke
-update programs open chocolatey.org loop

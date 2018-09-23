@@ -662,8 +662,8 @@ echo PUT LOTS OF EFFORT INTO THIS AND DONT FORGET IT.
 echo.
 echo Install programs that need to be updated.
 echo.
-
-start firefox.exe chocolatey.org
+echo This is using chocolatey! So manual update will be next.
+echo.
 
 set /p install="Enter a program to update... "
 if %install% == n goto manualupdate
