@@ -403,13 +403,12 @@ goto delusers
 
 :: Activate/Disable Users
 :10
-if not exist C:\users.txt (
-	set return=true
-	set return_number=10
-	goto getuserlist
-)
-
 if %automode% == true (
+	if not exist C:\users_admins.txt (
+		set return=true
+		set return_number=10
+		goto getuserlist
+	)
 	cls
 	net user BroShirt /active:no
 	net user BroPants /active:no
@@ -500,13 +499,12 @@ goto deladmins
 
 :: Changing passwords
 :12
-if not exist C:\users_admins.txt (
-	set return=true
-	set return_number=12
-	goto getuserlist
-)
-
 if %automode% == true (
+	if not exist C:\users_admins.txt (
+		set return=true
+		set return_number=12
+		goto getuserlist
+	)
 	cls
 	for /f %%G in (C:\users_admins.txt) do net user %%G abc123ABC123@@
 	cls
