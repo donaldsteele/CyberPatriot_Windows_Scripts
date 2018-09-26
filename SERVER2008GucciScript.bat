@@ -22,7 +22,7 @@ set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Server2008CompFiles
 set scm=%compfiles%\SCMBaselines
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
-set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%;%scm%;%programfiles%\nodejs;%allusersprofile%\chocolatey\bin
+set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%;%scm%;%programfiles%\nodejs;%allusersprofile%\chocolatey\bin;%systemroot%\System32\WindowsPowerShell\v1.0
 del /f /q C:\users.txt C:\approved_users.txt C:\approved_users_gucci.txt C:\users_admins.txt C:\mediafiles.txt C:\sketchyfiles.txt C:\eek.txt
 
 :: Motivational Speech

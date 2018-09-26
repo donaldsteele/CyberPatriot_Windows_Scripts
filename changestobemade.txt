@@ -5,6 +5,7 @@ Changes that need to be made:
 	- COOL THING: malware that have service display names as legit services
 	              figure out how to automate checking maybe or just check anyway
 	- add echo Done! all over the place
+	- make choco install seperate script to open in background
 
 NOTES:
 
