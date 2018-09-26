@@ -22,7 +22,7 @@ set desktop=%userprofile%\Desktop
 set compfiles=%desktop%\Win7CompFiles
 set scm=%compfiles%\SCMBaselines
 set pshellrun=@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command
-set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%;%scm%;%programfiles%\nodejs
+set PATH=%PATH%;%programfiles%\Git\bin;%programfiles%\nodejs\node_modules\npm\bin;%appdata%\npm;%compfiles%;%scm%;%programfiles%\nodejs;%allusersprofile%\chocolatey\bin
 del /f /q C:\mediafiles.txt C:\sketchyfiles.txt C:\eek.txt
 
 :: Motivational Speech
@@ -322,7 +322,7 @@ if %automode% == true (
 	%pshellrun% "Get-LocalUser > C:\usertemp_ps.txt"
 
 	for /f "skip=3" %%G in (C:\usertemp_ps.txt) do (echo %%G >> C:\users_admins.txt)
-	findstr /v "BroPants BroShirt DefaultAccount defaultuser0" C:\users_admins.txt > C:\users.txt
+	findstr /v "BroPants BroShirt DefaultAccount defaultuser0 Administrator Guest" C:\users_admins.txt > C:\users.txt
 	call jrepl " +$" "" /f C:\users.txt /o -
 	call jrepl " +$" "" /f C:\users_admins.txt /o -
 
