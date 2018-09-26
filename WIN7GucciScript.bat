@@ -70,6 +70,8 @@ echo.
 
 choco feature enable -n allowGlobalConfirmation
 
+sc config wuauserv start= auto
+sc start wuauserv
 choco install git nodejs powershell --ignorechecksum
 call npm install -g diffchecker
 
