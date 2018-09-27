@@ -6,6 +6,7 @@ Changes that need to be made:
 	              figure out how to automate checking maybe or just check anyway
 	- add echo Done! all over the place
 	- make choco install seperate script to open in background
+	- files owned by unauthorized users all over the dang place
 
 NOTES:
 
