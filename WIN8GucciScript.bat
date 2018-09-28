@@ -682,48 +682,11 @@ goto menu
 :20
 cls
 if %automode% == true (
-	sc stop tlntsvr
-	sc config tlntsvr start= disabled
-	sc stop msftpsvc
-	sc config msftpsvc start= disabled
-	sc stop snmptrap
-	sc config snmptrap start= disabled
-	sc stop ssdpsrv
-	sc config ssdpsrv start= disabled
-	sc stop termservice
-	sc config termservice start= disabled
-	sc stop sessionenv
-	sc config sessionenv start= disabled
-	sc stop remoteregistry
-	sc config remoteregistry start= disabled
-	sc stop Messenger
-	sc config Messenger start= disabled
-	sc stop upnphos
-	sc config upnphos start= disabled
-	sc stop WAS
-	sc config WAS start= disabled
-	sc stop RemoteAccess
-	sc config RemoteAccess start= disabled
-	sc stop mnmsrvc
-	sc config mnmsrvc start= disabled
-	sc stop NetTcpPortSharing
-	sc config NetTcpPortSharing start= disabled
-	sc stop RasMan
-	sc config RasMan start= disabled
-	sc stop TabletInputService
-	sc config TabletInputService start= disabled
-	sc stop RpcSs
-	sc config RpcSs start= disabled
-	sc stop SENS
-	sc config SENS start= disabled
-	sc stop EventSystem
-	sc config EventSystem start= disabled
-	sc stop SysMain
-	sc config SysMain start= disabled
-	sc config EventLog start= auto
-	sc start EventLog
-	sc stop W3SVC
-	sc config W3SVC start= disabled
+	for /f %%G in (%compfiles%\services.txt) do (sc stop %%G && sc config %%G start= disabled)
+	sc config wuauserv start= auto
+	sc start wuauserv
+	sc config eventlog start= auto
+	sc start eventlog
 	goto manualserv
 )
 
@@ -756,48 +719,11 @@ if %choice% == d goto disablegud
 if %choice% == n goto manualserv
 if %choice% == re goto menu
 if %choice% == def (
-	sc stop tlntsvr
-	sc config tlntsvr start= disabled
-	sc stop msftpsvc
-	sc config msftpsvc start= disabled
-	sc stop snmptrap
-	sc config snmptrap start= disabled
-	sc stop ssdpsrv
-	sc config ssdpsrv start= disabled
-	sc stop termservice
-	sc config termservice start= disabled
-	sc stop sessionenv
-	sc config sessionenv start= disabled
-	sc stop remoteregistry
-	sc config remoteregistry start= disabled
-	sc stop Messenger
-	sc config Messenger start= disabled
-	sc stop upnphos
-	sc config upnphos start= disabled
-	sc stop WAS
-	sc config WAS start= disabled
-	sc stop RemoteAccess
-	sc config RemoteAccess start= disabled
-	sc stop mnmsrvc
-	sc config mnmsrvc start= disabled
-	sc stop NetTcpPortSharing
-	sc config NetTcpPortSharing start= disabled
-	sc stop RasMan
-	sc config RasMan start= disabled
-	sc stop TabletInputService
-	sc config TabletInputService start= disabled
-	sc stop RpcSs
-	sc config RpcSs start= disabled
-	sc stop SENS
-	sc config SENS start= disabled
-	sc stop EventSystem
-	sc config EventSystem start= disabled
-	sc stop SysMain
-	sc config SysMain start= disabled
-	sc config EventLog start= auto
-	sc start EventLog
-	sc stop W3SVC
-	sc config W3SVC start= disabled
+	for /f %%G in (%compfiles%\services.txt) do (sc stop %%G && sc config %%G start= disabled)
+	sc config wuauserv start= auto
+	sc start wuauserv
+	sc config eventlog start= auto
+	sc start eventlog
 	goto 20
 )
 
