@@ -714,7 +714,8 @@ goto menu
 :21
 cls
 if %automode% == true (
-	for /f %%G in (%compfiles%\services.txt) do (sc stop %%G && sc config %%G start= disabled)
+	for /f %%G in (%compfiles%\services.txt) do (sc stop %%G)
+	for /f %%G in (%compfiles%\services.txt) do (sc config %%G start= disabled)
 	sc config wuauserv start= auto
 	sc start wuauserv
 	sc config eventlog start= auto
@@ -753,7 +754,8 @@ if %choice% == d goto disablegud
 if %choice% == n goto manualserv
 if %choice% == re goto menu
 if %choice% == def (
-	for /f %%G in (%compfiles%\services.txt) do (sc stop %%G && sc config %%G start= disabled)
+	for /f %%G in (%compfiles%\services.txt) do (sc stop %%G)
+	for /f %%G in (%compfiles%\services.txt) do (sc config %%G start= disabled)
 	sc config wuauserv start= auto
 	sc start wuauserv
 	sc config eventlog start= auto
