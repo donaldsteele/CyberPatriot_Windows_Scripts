@@ -694,6 +694,8 @@ if %automode% == true (
 	sc start wuauserv
 	sc config eventlog start= auto
 	sc start eventlog
+	sc config windefend start= auto
+	sc start windefend
 	goto manualserv
 )
 
@@ -731,6 +733,8 @@ if %choice% == def (
 	sc start wuauserv
 	sc config eventlog start= auto
 	sc start eventlog
+	sc config windefend start= auto
+	sc start windefend
 	goto 20
 )
 
