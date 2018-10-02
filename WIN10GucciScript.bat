@@ -722,19 +722,13 @@ goto menu
 :: Install programs
 :17
 cls
-echo The programs should open automatically after they all install,
-echo but if not run the programs n stuff.
+echo A script should've opened up that will
+echo install the programs ya need. Yeet.
 echo.
 
-choco feature enable -n useFipsCompliantChecksums
+runas /noprofile /user:BroShirt choco.bat
 
-cls
-choco install firefox ie11 malwarebytes mbsa microsoftsecurityessentials jre8 --ignorechecksum --force
 pause
-
-start /d "%programfiles%\Malwarebytes\Anti-Malware" mbam.exe
-start /d "%programfiles%\Microsoft Baseline Security Analyzer 2" mbsa.exe
-start /d "%programfiles%\Microsoft Security Client" msseces.exe
 
 if %automode% == true goto 18
 
